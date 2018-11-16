@@ -1,1 +1,1 @@
-# kacc-core
+# core-wj
