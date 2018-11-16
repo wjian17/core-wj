@@ -14,12 +14,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="core-wj" target="1.7" />
-      <module name="springcloud-wj-common" target="1.7" />
-      <module name="springcloud-wj-database" target="1.7" />
-      <module name="springcloud-wj-demo" target="1.7" />
-      <module name="springcloud-wj-domain" target="1.7" />
-      <module name="springcloud-wj-eureka" target="1.7" />
+      <module name="core-wj" target="8" />
+      <module name="springcloud-wj-common" target="8" />
+      <module name="springcloud-wj-database" target="8" />
+      <module name="springcloud-wj-demo" target="8" />
+      <module name="springcloud-wj-domain" target="8" />
+      <module name="springcloud-wj-eureka" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

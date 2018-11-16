@@ -1,6 +1,6 @@
 # 服务端口号
 server:
-  port: 8751
+  port: 8750
 
 #Eureka 相关配置
 eureka:

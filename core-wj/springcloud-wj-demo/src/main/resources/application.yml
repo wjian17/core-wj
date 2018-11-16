@@ -1,5 +1,5 @@
 server:
-  port: 8752
+  port: 8753
 
 eureka:
   instance:
@@ -13,7 +13,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://admin:admin@localhost:8751/eureka/
+      defaultZone: http://admin:admin@localhost:8750/eureka/
 
 #数据库配置
 spring:
@@ -32,7 +32,7 @@ spring:
     #autoCommit: true
     mysql:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/wjian
+      url: jdbc:mysql://localhost:3306/wjian?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: root
     oracle:
@@ -49,7 +49,7 @@ spring:
       validationQuery: select 1 from sysibm.sysdummy1
     log:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/wjian
+      url: jdbc:mysql://localhost:3306/wjian?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: root
 

@@ -78,7 +78,6 @@ public class MyBatisSessionFactoryConfig implements TransactionManagementConfigu
 	}
 
 	@Bean
-	@Override
 	public PlatformTransactionManager annotationDrivenTransactionManager() {
 		logger.info("数据库事务开启");
 		return new DataSourceTransactionManager(dataSource);

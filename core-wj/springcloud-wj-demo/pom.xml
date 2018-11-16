@@ -71,11 +71,21 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>knowledge.accumulation.springcloud</groupId>
             <artifactId>springcloud-wj-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>knowledge.accumulation.springcloud</groupId>
+            <artifactId>springcloud-wj-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>knowledge.accumulation.springcloud</groupId>
+            <artifactId>springcloud-wj-database</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
