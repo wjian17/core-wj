@@ -18,6 +18,7 @@
         <module>springcloud-wj-database</module>
         <module>springcloud-wj-domain</module>
         <module>springcloud-wj-common</module>
+        <module>springcloud-wj-demo</module>
     </modules>
 
     <properties>

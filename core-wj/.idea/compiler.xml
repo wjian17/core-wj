@@ -8,12 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springcloud-wj-common" />
         <module name="springcloud-wj-database" />
+        <module name="springcloud-wj-demo" />
         <module name="springcloud-wj-domain" />
         <module name="springcloud-wj-eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springcloud-wj-logback" target="1.7" />
+      <module name="core-wj" target="1.7" />
+      <module name="springcloud-wj-common" target="1.7" />
+      <module name="springcloud-wj-database" target="1.7" />
+      <module name="springcloud-wj-demo" target="1.7" />
+      <module name="springcloud-wj-domain" target="1.7" />
+      <module name="springcloud-wj-eureka" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

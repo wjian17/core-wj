@@ -9,9 +9,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-public class SpringcloudWjDatabaseApplication {
+public class SpringcloudWjDemoApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudWjDatabaseApplication.class, args);
+        SpringApplication.run(SpringcloudWjDemoApplication.class, args);
     }
 }
 
