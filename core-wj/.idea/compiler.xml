@@ -11,15 +11,27 @@
         <module name="springcloud-wj-demo" />
         <module name="springcloud-wj-domain" />
         <module name="springcloud-wj-eureka" />
+        <module name="springcloud-wj-mq" />
+        <module name="springcloud-wj-netty" />
+        <module name="springcloud-wj-redis" />
+        <module name="springcloud-wj-shiro" />
+        <module name="springcloud-wj-solr" />
+        <module name="springcloud-wj-webservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="core-wj" target="8" />
-      <module name="springcloud-wj-common" target="8" />
-      <module name="springcloud-wj-database" target="8" />
-      <module name="springcloud-wj-demo" target="8" />
-      <module name="springcloud-wj-domain" target="8" />
-      <module name="springcloud-wj-eureka" target="8" />
+      <module name="core-wj" target="1.7" />
+      <module name="springcloud-wj-common" target="1.5" />
+      <module name="springcloud-wj-database" target="1.5" />
+      <module name="springcloud-wj-demo" target="1.7" />
+      <module name="springcloud-wj-domain" target="1.5" />
+      <module name="springcloud-wj-eureka" target="1.7" />
+      <module name="springcloud-wj-mq" target="1.7" />
+      <module name="springcloud-wj-netty" target="1.7" />
+      <module name="springcloud-wj-redis" target="1.7" />
+      <module name="springcloud-wj-shiro" target="1.7" />
+      <module name="springcloud-wj-solr" target="1.7" />
+      <module name="springcloud-wj-webservice" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

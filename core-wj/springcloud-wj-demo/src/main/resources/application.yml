@@ -17,6 +17,8 @@ eureka:
 
 #数据库配置
 spring:
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     dbType: mysql
     #    dbType: oracle
@@ -52,6 +54,12 @@ spring:
       url: jdbc:mysql://localhost:3306/wjian?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: root
+
+demo:
+  data:
+    init:
+      apiSecret: apiSecret
+      apiKey: apiKey
 
 mapping:
   logbaseXml: classpath*:mapper/log/**.xml

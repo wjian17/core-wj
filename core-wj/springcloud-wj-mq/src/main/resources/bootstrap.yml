@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springcloud-wj-mq
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+info:
+  component: springcloud-wj-mq
