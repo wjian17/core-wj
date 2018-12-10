@@ -8,4 +8,8 @@
     <select id="selectTest" resultType="java.lang.Long">
         select COUNT(*) from Test
     </select>
+
+    <select id="getIdList" resultType="java.lang.Integer">
+        select id from Test
+    </select>
 </mapper>

@@ -1,7 +1,7 @@
 package com.knowledge.accumulation.mqtest;
 
 import com.knowledge.accumulation.SpringcloudWjMqApplication;
-import com.knowledge.accumulation.rabbitmq.SpringCloudSender;
+import com.knowledge.accumulation.rabbitmq.RabbitMqSender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class HelloApplicationTests {
 
     @Autowired
-    private SpringCloudSender sender;
+    private RabbitMqSender sender;
 
     @Test
     public void hello(){

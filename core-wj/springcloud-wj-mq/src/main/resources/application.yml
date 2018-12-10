@@ -27,4 +27,28 @@ spring:
       username: guest
       password: guest
       virtual-host: /
-
+      #    支持发布确认
+      publisher-confirms: true
+      #    支持发布返回
+      publisher-returns: true
+      listener:
+        simple:
+          #采用手动应答
+          acknowledge-mode: manual
+          # 当前监听容器数
+          concurrency: 1
+          # 最大数
+          max-concurrency: 1
+          # 是否支持重试
+          retry:
+            enabled: true
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    password: admin
+    user: admin
+    pool:
+      enabled: false
+#如果为True，则是Topic；如果是false或者默认，则是queue
+  jms:
+    pub-sub-domain: false
