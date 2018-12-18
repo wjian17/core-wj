@@ -4,7 +4,7 @@
 	<!--<include resource="org/springframework/boot/logging/logback/base.mapper.mapper.mapper" />-->
 
 	<contextName>biometrics-aibee-face</contextName>
-	<property name="LOG_HOME" value="${LOG_HOME:-/biometrics-data/logs/springcloud-wj-demo}" />
+	<property name="LOG_HOME" value="${LOG_HOME:-/biometrics-data/logs/springcloud-wj-shiro}" />
 
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- Log message format -->

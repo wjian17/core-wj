@@ -29,7 +29,7 @@
       <module name="springcloud-wj-mq" target="8" />
       <module name="springcloud-wj-netty" target="1.7" />
       <module name="springcloud-wj-redis" target="1.7" />
-      <module name="springcloud-wj-shiro" target="1.7" />
+      <module name="springcloud-wj-shiro" target="1.8" />
       <module name="springcloud-wj-solr" target="1.7" />
       <module name="springcloud-wj-webservice" target="1.7" />
     </bytecodeTargetLevel>

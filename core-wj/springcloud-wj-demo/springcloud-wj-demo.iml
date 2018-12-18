@@ -143,6 +143,7 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.1.0.RELEASE" level="project" />
     <orderEntry type="module" module-name="springcloud-wj-common" />
     <orderEntry type="module" module-name="springcloud-wj-domain" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.2" level="project" />
     <orderEntry type="module" module-name="springcloud-wj-database" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.13" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
