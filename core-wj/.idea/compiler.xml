@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-wj-business" />
         <module name="springcloud-wj-common" />
         <module name="springcloud-wj-database" />
         <module name="springcloud-wj-demo" />
@@ -21,6 +22,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="core-wj" target="1.7" />
+      <module name="springcloud-wj-business" target="1.7" />
       <module name="springcloud-wj-common" target="1.5" />
       <module name="springcloud-wj-database" target="1.5" />
       <module name="springcloud-wj-demo" target="1.7" />

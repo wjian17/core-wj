@@ -23,6 +23,7 @@ eureka:
 spring:
   aop:
     proxy-target-class: true
+    auto: true
   main:
     allow-bean-definition-overriding: true
   datasource:
@@ -40,7 +41,7 @@ spring:
     #autoCommit: true
     mysql:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/wjian?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://localhost:3306/springcloud_wj_shiro?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: root
     oracle:

@@ -1,7 +1,7 @@
 package com.knowledge.accumulation.thread_local;
 
 /**
- * Created by wyf on 2017/8/10.
+ * Created by wj on 2017/8/10.
  * 保存每次请求的请求ID，使用ThreadLocal将变量在线程之间进行隔离，避免出现并发
  */
 public class SerialNoLocalHolder {

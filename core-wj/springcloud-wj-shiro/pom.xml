@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>knowledge.accumulation.springcloud</groupId>
     <artifactId>springcloud-wj-shiro</artifactId>
 
     <name>springcloud-wj-shiro</name>
@@ -68,6 +69,13 @@
             <artifactId>shiro-ehcache</artifactId>
             <version>1.4.0</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.0.3</version>
+        </dependency>
         <!--<dependency>-->
         <!--<groupId>org.apache.shiro</groupId>-->
         <!--<artifactId>shiro-core</artifactId>-->
@@ -95,6 +103,11 @@
         <dependency>
             <groupId>knowledge.accumulation.springcloud</groupId>
             <artifactId>springcloud-wj-database</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>knowledge.accumulation.springcloud</groupId>
+            <artifactId>springcloud-wj-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

@@ -7,7 +7,7 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import javax.servlet.Filter;
 
 /**
- * @author wyf
+ * @author wj
  * 
  *         通用配置类
  */

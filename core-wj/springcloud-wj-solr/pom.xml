@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>knowledge.accumulation.springcloud</groupId>
     <artifactId>springcloud-wj-solr</artifactId>
 
     <name>springcloud-wj-solr</name>

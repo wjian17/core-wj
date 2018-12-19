@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>knowledge.accumulation.springcloud</groupId>
     <artifactId>springcloud-wj-netty</artifactId>
 
     <name>springcloud-wj-netty</name>

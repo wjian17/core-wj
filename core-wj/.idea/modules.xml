@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/core-wj.iml" filepath="$PROJECT_DIR$/.idea/core-wj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-business/springcloud-wj-business.iml" filepath="$PROJECT_DIR$/springcloud-wj-business/springcloud-wj-business.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-common/springcloud-wj-common.iml" filepath="$PROJECT_DIR$/springcloud-wj-common/springcloud-wj-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-database/springcloud-wj-database.iml" filepath="$PROJECT_DIR$/springcloud-wj-database/springcloud-wj-database.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-demo/springcloud-wj-demo.iml" filepath="$PROJECT_DIR$/springcloud-wj-demo/springcloud-wj-demo.iml" />
