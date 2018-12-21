@@ -1,6 +1,8 @@
-package com.knowledge.accumulation.config;// 记录元方法信息的实体类
+package com.knowledge.accumulation.demo;// 记录元方法信息的实体类
 import io.netty.bootstrap.Bootstrap;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -8,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.management.MBeanServer;
+import java.util.Scanner;
 
 /**
  * 客户端发送类
@@ -37,14 +40,12 @@ public class NettyClient {
         worker.shutdownGracefully();
     }
 
-    public Object remoteCall(final MethodInvokeMeta cmd, int retry) {
+    public ChannelFuture remoteCall(int retry) {
         try {
-            CustomChannelInitializerClient customChannelInitializer = new CustomChannelInitializerClient(cmd);
+            CustomChannelInitializerClient customChannelInitializer = new CustomChannelInitializerClient();
             bootstrap.handler(customChannelInitializer);
             ChannelFuture sync = bootstrap.connect(url, port).sync();
-            sync.channel().closeFuture().sync();
-            Object response = customChannelInitializer.getResponse();
-            return response;
+            return sync;
         } catch (InterruptedException e) {
             retry++;
             if (retry > MAX_RETRY_TIMES) {
@@ -56,8 +57,26 @@ public class NettyClient {
                     e1.printStackTrace();
                 }
                 logger.info("第{}次尝试....失败", retry);
-                return remoteCall(cmd, retry);
+                return remoteCall(retry);
             }
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        NettyClient nettyClient = new NettyClient("localhost",11111);
+        ChannelFuture future = nettyClient.remoteCall(3);
+        Scanner sc = new Scanner(System.in);
+        while(true){
+            System.out.println("service input   to client");
+            String line = sc.nextLine();
+            TestPojo testPojo = new TestPojo();
+            testPojo.setName("***************88");
+            future.channel().writeAndFlush(testPojo);
+            if("exit".equals(line)){
+                future.channel().writeAndFlush(Unpooled.copiedBuffer(line.getBytes("UTF-8"))).addListener(ChannelFutureListener.CLOSE);
+                break;
+            }
+            future.channel().writeAndFlush(Unpooled.copiedBuffer(line.getBytes("UTF-8")));
         }
     }
 }

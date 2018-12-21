@@ -1,7 +1,6 @@
-package com.knowledge.accumulation.config;
+package com.knowledge.accumulation.demo;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
@@ -13,13 +12,6 @@ import org.slf4j.LoggerFactory;
  */
 public class ClientChannelHandlerAdapter extends ChannelHandlerAdapter {
     private Logger logger = LoggerFactory.getLogger(ClientChannelHandlerAdapter.class);
-    private MethodInvokeMeta methodInvokeMeta;
-    private CustomChannelInitializerClient channelInitializerClient;
-
-    public ClientChannelHandlerAdapter(MethodInvokeMeta methodInvokeMeta, CustomChannelInitializerClient channelInitializerClient) {
-        this.methodInvokeMeta = methodInvokeMeta;
-        this.channelInitializerClient = channelInitializerClient;
-    }
 
     @Override
     /**
@@ -32,15 +24,8 @@ public class ClientChannelHandlerAdapter extends ChannelHandlerAdapter {
     }
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        if (methodInvokeMeta.getMethodName().endsWith("toString") && !"class java.lang.String".equals(methodInvokeMeta.getReturnType().toString()))
-            logger.info("客户端发送信息参数:{},信息返回值类型：{}", methodInvokeMeta.getArgs(), methodInvokeMeta.getReturnType());
-        ctx.writeAndFlush(methodInvokeMeta);
-
-    }
-
-    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        System.out.println(msg.getClass());
         ByteBuf readBuffer = (ByteBuf)msg;
         byte[] tempDatas = new byte[readBuffer.readableBytes()];
         readBuffer.readBytes(tempDatas);
@@ -49,9 +34,11 @@ public class ClientChannelHandlerAdapter extends ChannelHandlerAdapter {
             ctx.close();
             return;
         }
-        String line = "server message to client!";
+        String line = "server message to client!=========" +  message;
+        System.out.println(line);
         //写操作自动释放缓存，避免内存溢出  write单独调用不会刷新缓存，再次调用flush
-        ctx.writeAndFlush(Unpooled.copiedBuffer(line.getBytes("UTF-8")));
-        channelInitializerClient.setResponse(msg);
+//        ctx.writeAndFlush(Unpooled.copiedBuffer(line.getBytes("UTF-8")));
+        //客户端刷新缓存
+//        ReferenceCountUtil.release(msg);
     }
 }

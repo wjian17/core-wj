@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping(value = "/userLogin")
@@ -34,7 +35,10 @@ public class UserLoginController {
     public ResponseBean login(HttpServletRequest request){
         String className = (String)request.getAttribute("shiroLoginFailure");
         System.out.println(className);
-        System.out.println(request.getSession(false).getId());
+        HttpSession session = request.getSession(false);
+        if(session!=null){
+            System.out.println(session.getId());
+        }
         ResponseBean responseBean = new ResponseBean();
         try{
             System.out.println("1111");

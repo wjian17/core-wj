@@ -27,7 +27,11 @@ public class MyRealm extends AuthorizingRealm {
         try {
             String passwordEcr = MD5Util.MD5("password", ByteSource.Util.bytes("salt").getBytes(),1);
             System.out.println(passwordEcr);
-            simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, "67a1e09bb1f83f5007dc119c14d663aa", ByteSource.Util.bytes("salt"),getName());
+            if(user.equals("username")) {
+                simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, "67a1e09bb1f83f5007dc119c14d663aa", ByteSource.Util.bytes("salt"), getName());
+            }else if(user.equals("username1")){
+                simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, "62b2648f052d6599bdc84863d712a2d6", ByteSource.Util.bytes("salt"), getName());
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
