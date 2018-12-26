@@ -65,12 +65,6 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>springcloud-wj-common</groupId>
-            <artifactId>wj-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -79,8 +73,8 @@
         </dependency>
 
         <dependency>
-            <groupId>springcloud-wj-common</groupId>
-            <artifactId>wj-common</artifactId>
+            <groupId>knowledge.accumulation.springcloud</groupId>
+            <artifactId>springcloud-wj-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -17,7 +17,6 @@
         <module>springcloud-wj-eureka</module>
         <module>springcloud-wj-database</module>
         <module>springcloud-wj-domain</module>
-        <module>springcloud-wj-common</module>
         <module>springcloud-wj-demo</module>
         <module>springcloud-wj-mq</module>
         <module>springcloud-wj-shiro</module>
@@ -26,6 +25,7 @@
         <module>springcloud-wj-netty</module>
         <module>springcloud-wj-webservice</module>
         <module>springcloud-wj-business</module>
+       <!-- <module>springcloud-wj-dubbo-impl</module>-->
     </modules>
 
     <properties>

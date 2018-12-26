@@ -16,7 +16,7 @@ public class Producer {
         MessageProducer producer = null;
         MessageProducer topicProducer = null;
         try {
-            connectionFactory = new ActiveMQConnectionFactory("admin", "admin", "tcp://47.95.224.207:61616");
+            connectionFactory = new ActiveMQConnectionFactory("guest", "guest", "tcp://47.95.224.207:61616");
             connection = connectionFactory.createConnection();
             connection.start();
             /**
@@ -38,6 +38,7 @@ public class Producer {
                 Thread.sleep(100);
                 message = session.createTextMessage(datas+i);
                 producer.send(message);
+                producer.send(message,DeliveryMode.PERSISTENT,9,1000*6);
             }
             for(int i=0;i<100;i++) {
                 System.out.println("===========");

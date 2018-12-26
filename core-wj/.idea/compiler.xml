@@ -11,6 +11,8 @@
         <module name="springcloud-wj-database" />
         <module name="springcloud-wj-demo" />
         <module name="springcloud-wj-domain" />
+        <module name="springcloud-wj-dubbo" />
+        <module name="springcloud-wj-dubbo-impl" />
         <module name="springcloud-wj-eureka" />
         <module name="springcloud-wj-mq" />
         <module name="springcloud-wj-netty" />
@@ -27,6 +29,8 @@
       <module name="springcloud-wj-database" target="1.5" />
       <module name="springcloud-wj-demo" target="1.7" />
       <module name="springcloud-wj-domain" target="1.5" />
+      <module name="springcloud-wj-dubbo" target="1.7" />
+      <module name="springcloud-wj-dubbo-impl" target="1.7" />
       <module name="springcloud-wj-eureka" target="1.7" />
       <module name="springcloud-wj-mq" target="8" />
       <module name="springcloud-wj-netty" target="1.7" />
