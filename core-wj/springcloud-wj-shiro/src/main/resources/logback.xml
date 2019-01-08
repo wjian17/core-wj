@@ -68,7 +68,7 @@
 		</filter>
 	</appender>
 
-	<logger name="com.knowledge.accumulation" level="INFO">
+	<logger name="knowledge.accumulation.springcloud" level="INFO">
 		<appender-ref ref="infoDailyRollingFile" />
 		<appender-ref ref="severeDailyRollingFile" />
 	</logger>

@@ -64,8 +64,8 @@ demo:
 mapping:
   logbaseXml: classpath*:mapper/log/**.xml
   baseXml: classpath*:mapper/${spring.datasource.dbType}/**.xml
-  basePackage: com.knowledge.accumulation
-  logBasePackage: com.knowledge.accumulation
+  basePackage: knowledge.accumulation.springcloud
+  logBasePackage: knowledge.accumulation.springcloud
   config: mybatis-config.xml
 
 # mybatis配置

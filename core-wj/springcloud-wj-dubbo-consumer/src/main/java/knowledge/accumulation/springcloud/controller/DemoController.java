@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud.controller;
+package com.knowledge.accumulation.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import knowledge.accumulation.springcloud.service.DemoService;

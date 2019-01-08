@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud;
+package com.knowledge.accumulation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

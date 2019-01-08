@@ -11,7 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-dubbo-api/springcloud-wj-dubbo-api.iml" filepath="$PROJECT_DIR$/springcloud-wj-dubbo-api/springcloud-wj-dubbo-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-dubbo-consumer/springcloud-wj-dubbo-consumer.iml" filepath="$PROJECT_DIR$/springcloud-wj-dubbo-consumer/springcloud-wj-dubbo-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-dubbo-provider/springcloud-wj-dubbo-provider.iml" filepath="$PROJECT_DIR$/springcloud-wj-dubbo-provider/springcloud-wj-dubbo-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-ehcache/springcloud-wj-ehcache.iml" filepath="$PROJECT_DIR$/springcloud-wj-ehcache/springcloud-wj-ehcache.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-eureka/springcloud-wj-eureka.iml" filepath="$PROJECT_DIR$/springcloud-wj-eureka/springcloud-wj-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-jpa/springcloud-wj-jpa.iml" filepath="$PROJECT_DIR$/springcloud-wj-jpa/springcloud-wj-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-mq/springcloud-wj-mq.iml" filepath="$PROJECT_DIR$/springcloud-wj-mq/springcloud-wj-mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-netty/springcloud-wj-netty.iml" filepath="$PROJECT_DIR$/springcloud-wj-netty/springcloud-wj-netty.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-redis/springcloud-wj-redis.iml" filepath="$PROJECT_DIR$/springcloud-wj-redis/springcloud-wj-redis.iml" />

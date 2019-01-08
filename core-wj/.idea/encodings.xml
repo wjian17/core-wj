@@ -10,7 +10,9 @@
     <file url="file://$PROJECT_DIR$/springcloud-wj-dubbo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-dubbo-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-dubbo-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-wj-ehcache" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-wj-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-mq" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-netty" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-redis" charset="UTF-8" />

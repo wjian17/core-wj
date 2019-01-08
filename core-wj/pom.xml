@@ -27,6 +27,8 @@
         <module>springcloud-wj-business</module>
         <module>springcloud-wj-dubbo-provider</module>
         <module>springcloud-wj-dubbo-consumer</module>
+        <module>springcloud-wj-ehcache</module>
+        <module>springcloud-wj-jpa</module>
     </modules>
 
     <properties>

@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud.service;
+package com.knowledge.accumulation.service;
 
 public interface DemoService {
 

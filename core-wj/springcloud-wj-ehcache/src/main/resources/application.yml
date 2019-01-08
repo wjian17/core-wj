@@ -1,0 +1,13 @@
+server:
+  port: 8099
+
+spring:
+  cache:
+    ehcache:
+      config: ehcache.xml
+  application:
+    name: springcloud-wj-ehcache
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+  info:
+    component: springcloud-wj-ehcache

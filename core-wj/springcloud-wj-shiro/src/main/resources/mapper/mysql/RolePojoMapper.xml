@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.knowledge.accumulation.mapper.RolePojoMapper" >
-  <resultMap id="BaseResultMap" type="com.knowledge.accumulation.generator.RolePojo" >
+<mapper namespace="knowledge.accumulation.springcloud.mapper.RolePojoMapper" >
+  <resultMap id="BaseResultMap" type="knowledge.accumulation.springcloud.generator.RolePojo" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="role_id" property="roleId" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -23,7 +23,7 @@
     delete from role
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.knowledge.accumulation.generator.RolePojo" >
+  <insert id="insert" parameterType="knowledge.accumulation.springcloud.generator.RolePojo" >
     insert into role (id, role_id, name, 
       description, status, create_time, 
       update_time)
@@ -31,7 +31,7 @@
       #{description,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.knowledge.accumulation.generator.RolePojo" >
+  <insert id="insertSelective" parameterType="knowledge.accumulation.springcloud.generator.RolePojo" >
     insert into role
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.knowledge.accumulation.generator.RolePojo" >
+  <update id="updateByPrimaryKeySelective" parameterType="knowledge.accumulation.springcloud.generator.RolePojo" >
     update role
     <set >
       <if test="roleId != null" >
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.knowledge.accumulation.generator.RolePojo" >
+  <update id="updateByPrimaryKey" parameterType="knowledge.accumulation.springcloud.generator.RolePojo" >
     update role
     set role_id = #{roleId,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},

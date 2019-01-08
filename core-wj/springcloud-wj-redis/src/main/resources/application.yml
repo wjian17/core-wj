@@ -1,0 +1,25 @@
+server:
+  port: 8099
+
+spring:
+  cache:
+    redis:
+      config: ehcache.xml
+  application:
+    name: springcloud-wj-redis
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+  info:
+    component: springcloud-wj-redis
+  redis:
+    database: 0
+    host: 47.95.224.207
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: 3000ms
+        min-idle: 20
+    password: jhtech
+    port: 6379
+
+
