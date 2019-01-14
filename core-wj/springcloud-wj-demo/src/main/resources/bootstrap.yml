@@ -1,10 +1,10 @@
 spring:
   application:
-    name: springcloud-wj-database
+    name: springcloud-wj-demo
   http:
     encoding: { charset: UTF-8, enable: true, force: true }
 info:
-  component: springcloud-wj-database
+  component: springcloud-wj-demo
   contact:
     email: wjian17@qq.com
     phone: 18810078492

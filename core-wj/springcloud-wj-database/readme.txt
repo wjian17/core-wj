@@ -1,10 +1,7 @@
-server:
-  port: 8753
+#数据源配置
 
 #数据库配置
 spring:
-  main:
-    allow-bean-definition-overriding: true
   datasource:
     dbType: mysql
     #    dbType: oracle
@@ -41,30 +38,8 @@ spring:
       username: root
       password: Slave_1234
 
-demo:
-  data:
-    init:
-      apiSecret: apiSecret
-      apiKey: apiKey
 
-mapping:
-  logbaseXml: classpath*:mapper/log/**.xml
-  baseXml: classpath*:mapper/${spring.datasource.dbType}/**.xml
-  basePackage: knowledge.accumulation.springcloud
-  logBasePackage: knowledge.accumulation.springcloud
-  config: mybatis-config.xml
 
-# mybatis配置
-mybatis:
-  # 批量插入或更新时，每次事务执行的插入或更新数据行数
-  #  writeMapperLocations: classpath:mapper/write/**.mapper.mapper.mapper
-  #  readMapperLocations: classpath:mapper/read/**.mapper.mapper.mapper
-  rows_per_transaction: 500
-
-# Log 配置 级别大写 TRACE|DEBUG|INFO|WARN|ERROR
-logging:
-  level:
-    #root: INFO
-    knowledge.accumulation.springcloud: DEBUG
-  path: springcloud-wj-database
-  config: classpath:logback.xml
+@Bean(name = "dataSource")
+@Bean(name="sqlSessionFactory")
+MapperScannerConfigurer  作用是扫描packages 注入sqlSessionFactory

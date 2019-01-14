@@ -6,10 +6,10 @@
 
 
     <select id="selectTest" resultType="java.lang.Long">
-        select COUNT(*) from Test
+        select COUNT(*) from test
     </select>
 
     <select id="getIdList" resultType="java.lang.Integer">
-        select id from Test
+        select id from test
     </select>
 </mapper>

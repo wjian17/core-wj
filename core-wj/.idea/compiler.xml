@@ -22,6 +22,7 @@
         <module name="springcloud-wj-redis" />
         <module name="springcloud-wj-shiro" />
         <module name="springcloud-wj-solr" />
+        <module name="springcloud-wj-ssm" />
         <module name="springcloud-wj-webservice" />
       </profile>
     </annotationProcessing>
@@ -43,6 +44,7 @@
       <module name="springcloud-wj-redis" target="1.7" />
       <module name="springcloud-wj-shiro" target="1.8" />
       <module name="springcloud-wj-solr" target="1.7" />
+      <module name="springcloud-wj-ssm" target="1.7" />
       <module name="springcloud-wj-webservice" target="1.7" />
     </bytecodeTargetLevel>
   </component>

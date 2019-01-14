@@ -6,12 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Hello world!
  */
-//@EnableDiscoveryClient
-//@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @SpringBootApplication
-public class SpringcloudWjDemoApplication {
+public class SSMApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudWjDemoApplication.class, args);
+//        DispatcherServlet
+//        SimpleControllerHandlerAdapter
+        SpringApplication.run(SSMApplication.class, args);
     }
 }
-

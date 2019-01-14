@@ -29,6 +29,7 @@
         <module>springcloud-wj-dubbo-consumer</module>
         <module>springcloud-wj-ehcache</module>
         <module>springcloud-wj-jpa</module>
+        <module>springcloud-wj-ssm</module>
     </modules>
 
     <properties>

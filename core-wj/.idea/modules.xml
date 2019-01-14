@@ -19,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-redis/springcloud-wj-redis.iml" filepath="$PROJECT_DIR$/springcloud-wj-redis/springcloud-wj-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-shiro/springcloud-wj-shiro.iml" filepath="$PROJECT_DIR$/springcloud-wj-shiro/springcloud-wj-shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-solr/springcloud-wj-solr.iml" filepath="$PROJECT_DIR$/springcloud-wj-solr/springcloud-wj-solr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-ssm/springcloud-wj-ssm.iml" filepath="$PROJECT_DIR$/springcloud-wj-ssm/springcloud-wj-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-webservice/springcloud-wj-webservice.iml" filepath="$PROJECT_DIR$/springcloud-wj-webservice/springcloud-wj-webservice.iml" />
     </modules>
   </component>

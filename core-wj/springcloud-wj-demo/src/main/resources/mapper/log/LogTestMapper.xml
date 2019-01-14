@@ -5,6 +5,6 @@
 <mapper namespace="knowledge.accumulation.springcloud.mapper.LogTestMapper">
 
     <select id="selectTest" resultType="java.lang.Long">
-        select COUNT(*) from Test
+        select COUNT(*) from test
     </select>
 </mapper>
