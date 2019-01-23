@@ -29,6 +29,18 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-zookeeper-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-consul-dependencies</artifactId>
+            <type>pom</type>
+        </dependency>
         <!--安全认证的配置-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

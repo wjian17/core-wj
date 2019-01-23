@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: springcloud-wj-configServer
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+info:
+  component: springcloud-wj-configServer
+  contact:
+    email: wjian17@qq.com
+    phone: 18810078492

@@ -6,46 +6,58 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-wj-api" />
         <module name="springcloud-wj-business" />
         <module name="springcloud-wj-common" />
+        <module name="springcloud-wj-configServer" />
         <module name="springcloud-wj-database" />
         <module name="springcloud-wj-demo" />
         <module name="springcloud-wj-domain" />
         <module name="springcloud-wj-dubbo-api" />
         <module name="springcloud-wj-dubbo-consumer" />
         <module name="springcloud-wj-dubbo-provider" />
+        <module name="springcloud-wj-easypoi" />
         <module name="springcloud-wj-ehcache" />
         <module name="springcloud-wj-eureka" />
         <module name="springcloud-wj-jpa" />
         <module name="springcloud-wj-mq" />
         <module name="springcloud-wj-netty" />
+        <module name="springcloud-wj-quartz" />
         <module name="springcloud-wj-redis" />
+        <module name="springcloud-wj-rest" />
         <module name="springcloud-wj-shiro" />
         <module name="springcloud-wj-solr" />
         <module name="springcloud-wj-ssm" />
         <module name="springcloud-wj-webservice" />
+        <module name="springcloud-wj-wechat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="core-wj" target="1.7" />
+      <module name="springcloud-wj-api" target="1.7" />
       <module name="springcloud-wj-business" target="1.7" />
       <module name="springcloud-wj-common" target="1.5" />
+      <module name="springcloud-wj-configServer" target="1.7" />
       <module name="springcloud-wj-database" target="1.5" />
       <module name="springcloud-wj-demo" target="1.7" />
       <module name="springcloud-wj-domain" target="1.5" />
       <module name="springcloud-wj-dubbo-api" target="1.7" />
       <module name="springcloud-wj-dubbo-consumer" target="1.7" />
       <module name="springcloud-wj-dubbo-provider" target="1.8" />
+      <module name="springcloud-wj-easypoi" target="1.7" />
       <module name="springcloud-wj-ehcache" target="1.7" />
       <module name="springcloud-wj-eureka" target="1.7" />
       <module name="springcloud-wj-jpa" target="1.7" />
       <module name="springcloud-wj-mq" target="8" />
       <module name="springcloud-wj-netty" target="1.7" />
+      <module name="springcloud-wj-quartz" target="1.7" />
       <module name="springcloud-wj-redis" target="1.7" />
+      <module name="springcloud-wj-rest" target="1.7" />
       <module name="springcloud-wj-shiro" target="1.8" />
       <module name="springcloud-wj-solr" target="1.7" />
       <module name="springcloud-wj-ssm" target="1.7" />
       <module name="springcloud-wj-webservice" target="1.7" />
+      <module name="springcloud-wj-wechat" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

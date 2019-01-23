@@ -1,7 +1,6 @@
-package com.knowledge.accumulation.controller;
+package knowledge.accumulation.springcloud.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import knowledge.accumulation.springcloud.service.DemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @Reference(version = "1.0.0",timeout = 60000)
-    private DemoService demoService;
+    private com.knowledge.accumulation.service.DemoService demoService;
 
     @RequestMapping("/test")
     public String testDemo(){

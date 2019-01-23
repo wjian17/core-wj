@@ -22,3 +22,17 @@
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
+
+
+
+连接池
+连接工厂
+template模板【工厂，serializer】
+序列化需要配置key和hash
+    private RedisSerializer keySerializer = null;
+    @Nullable
+    private RedisSerializer valueSerializer = null;
+    @Nullable
+    private RedisSerializer hashKeySerializer = null;
+    @Nullable
+    private RedisSerializer hashValueSerializer = null;

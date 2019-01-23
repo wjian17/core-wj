@@ -1,6 +1,6 @@
 package knowledge.accumulation.springcloud;
 
-import knowledge.accumulation.springcloud.service.domain.DomeRepository;
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.transaction.Transactional;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Unit test for simple App.
@@ -43,6 +43,8 @@ public class AppTest
         log.setName("log101");
         try {
             domeRepository.save(test);
+            List<knowledge.accumulation.springcloud.module.jpa.pojo.Test> tests =domeRepository.findAll();
+            System.out.println(JSON.toJSONString(tests));
             logDomeRepository.save(log);
         }catch (Exception e){
             e.printStackTrace();

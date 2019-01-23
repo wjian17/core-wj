@@ -1,5 +1,5 @@
 server:
-  port: 8101
+  port: 8102
 
 spring:
   application:
@@ -50,6 +50,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 mapping:
   logbaseXml: classpath*:mapper/log/**.xml

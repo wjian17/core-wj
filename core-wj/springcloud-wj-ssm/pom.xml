@@ -29,6 +29,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+        <dependency>
             <groupId>knowledge.accumulation.springcloud</groupId>
             <artifactId>springcloud-wj-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
