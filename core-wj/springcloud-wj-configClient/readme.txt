@@ -18,3 +18,6 @@ management:
     web:
       exposure:
         include: "*"
+
+
+localhost:8758/actuator/refresh 使用【可以创建一个配置类】

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient("service-provider")
 @Service("testMapper")
 public interface TestMapper {
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "service/test", method = RequestMethod.POST)
     public ResponseBean test();
 
 }
