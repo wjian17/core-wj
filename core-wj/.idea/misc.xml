@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/springcloud-wj-dubbo/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-wj-dubbo-impl/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-wj-dubbo-api/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-wj-configServer/pom.xml" />
       </list>
     </option>
   </component>

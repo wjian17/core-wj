@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-api/springcloud-wj-api.iml" filepath="$PROJECT_DIR$/springcloud-wj-api/springcloud-wj-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-business/springcloud-wj-business.iml" filepath="$PROJECT_DIR$/springcloud-wj-business/springcloud-wj-business.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-common/springcloud-wj-common.iml" filepath="$PROJECT_DIR$/springcloud-wj-common/springcloud-wj-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-configClient/springcloud-wj-configClient.iml" filepath="$PROJECT_DIR$/springcloud-wj-configClient/springcloud-wj-configClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-configServer/springcloud-wj-configServer.iml" filepath="$PROJECT_DIR$/springcloud-wj-configServer/springcloud-wj-configServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-database/springcloud-wj-database.iml" filepath="$PROJECT_DIR$/springcloud-wj-database/springcloud-wj-database.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-demo/springcloud-wj-demo.iml" filepath="$PROJECT_DIR$/springcloud-wj-demo/springcloud-wj-demo.iml" />

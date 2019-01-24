@@ -36,6 +36,7 @@
         <module>springcloud-wj-wechat</module>
         <module>springcloud-wj-api</module>
         <module>springcloud-wj-configServer</module>
+        <module>springcloud-wj-configClient</module>
     </modules>
 
     <properties>
