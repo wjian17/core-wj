@@ -1,6 +1,6 @@
 package knowledge.accumulation.springcloud.mapper;
 
-import knowledge.accumulation.springcloud.service.domain.Log;
+import knowledge.accumulation.springcloud.hystrix.domain.Log;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

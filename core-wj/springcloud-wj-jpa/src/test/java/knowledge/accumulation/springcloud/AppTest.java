@@ -21,11 +21,11 @@ public class AppTest
 
     @Autowired
     @Qualifier("domeRepository")
-    private knowledge.accumulation.springcloud.service.domain.DomeRepository domeRepository;
+    private knowledge.accumulation.springcloud.hystrix.domain.DomeRepository domeRepository;
 
     @Autowired
     @Qualifier("logDomeRepository")
-    private knowledge.accumulation.springcloud.service.log.DomeRepository logDomeRepository;
+    private knowledge.accumulation.springcloud.hystrix.log.DomeRepository logDomeRepository;
 
     /**
      * Rigorous Test :-)

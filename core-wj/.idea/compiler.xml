@@ -31,6 +31,7 @@
         <module name="springcloud-wj-ssm" />
         <module name="springcloud-wj-webservice" />
         <module name="springcloud-wj-wechat" />
+        <module name="springcloud-wj-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -60,6 +61,7 @@
       <module name="springcloud-wj-ssm" target="1.7" />
       <module name="springcloud-wj-webservice" target="1.7" />
       <module name="springcloud-wj-wechat" target="1.7" />
+      <module name="springcloud-wj-zuul" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -21,6 +21,8 @@ public class QuartJob implements Job {
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
         scheduler.scheduleJob(jobDetail,trigger);
         scheduler.start();
+        Thread.sleep(1000000);
+        scheduler.clear();
     }
 
 

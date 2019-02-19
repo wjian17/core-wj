@@ -27,5 +27,6 @@
     <file url="file://$PROJECT_DIR$/springcloud-wj-ssm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-webservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-wechat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-wj-zuul" charset="UTF-8" />
   </component>
 </project>

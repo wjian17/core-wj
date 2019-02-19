@@ -77,3 +77,41 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000 #断路器超时时间，默认1000ms
+
+
+hystrix 配置方式 1：rest和service开启不同线程，
+//@FeignClient("compute-service")
+@FeignClient(value = "compute-service", fallback = ComputeClientHystrix.class)
+public interface ComputeClient {
+
+    @RequestMapping(method = RequestMethod.GET, value = "/add")
+    Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b);
+
+}
+
+@Component
+public class ComputeClientHystrix implements ComputeClient {
+    @Override
+    public Integer add(@RequestParam(value = "a") Integer a, @RequestParam(value = "b") Integer b) {
+        return -9999;
+    }
+}
+
+
+
+hystrix 配置方式 2： 同一个线程  rest和service共享同一个线程
+ @HystrixCommand(groupKey = "aibeeFaceRecognitionGroup", fallbackMethod = "fallBackCall")
+    public ResponseBean test() {
+        return testMapper.test();
+    }
+
+    public RestResponse fallBackCall() {
+        return returnHystrixError();
+    }
+
+    public RestResponse returnHystrixError(){
+        RestResponse restResponse = new RestResponse();
+        restResponse.getResponseHeader().setErrorCode(ErrorCode.EXCEPTION);
+        restResponse.getResponseHeader().setMessage("FAILED SERVICE CALL! - FALLING BACK");
+        return restResponse;
+    }

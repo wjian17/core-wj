@@ -27,7 +27,7 @@ import java.util.Properties;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactorySecondary",
         transactionManagerRef="transactionManagerSecondary",
-        basePackages= { "knowledge.accumulation.springcloud.service.log" }) //设置Repository所在位置
+        basePackages= {"knowledge.accumulation.springcloud.hystrix.log"}) //设置Repository所在位置
 public class SecondaryConfig {
  
     @Autowired

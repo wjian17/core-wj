@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud.service.domain;
+package knowledge.accumulation.springcloud.hystrix.domain;
 
 import knowledge.accumulation.springcloud.module.jpa.pojo.Test;
 import org.springframework.data.jpa.repository.JpaRepository;

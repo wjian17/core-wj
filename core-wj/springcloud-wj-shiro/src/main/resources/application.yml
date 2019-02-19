@@ -41,7 +41,7 @@ spring:
     #autoCommit: true
     mysql:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/springcloud_wj_shiro?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://47.95.224.207:3306/db_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
       password: root
     oracle:

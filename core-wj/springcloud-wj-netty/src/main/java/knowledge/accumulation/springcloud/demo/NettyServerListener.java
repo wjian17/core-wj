@@ -120,7 +120,7 @@ public class NettyServerListener {
         ChannelFuture future = nettyServerListener.start();
         Scanner sc = new Scanner(System.in);
         while(true){
-            System.out.println("service input   to client");
+            System.out.println("hystrix input   to client");
             String line = sc.nextLine();
             if("exit".equals(line)){
                 future.channel().writeAndFlush(Unpooled.copiedBuffer(line.getBytes("UTF-8"))).addListener(ChannelFutureListener.CLOSE);

@@ -26,7 +26,7 @@ import java.util.Properties;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryPrimary",
         transactionManagerRef="transactionManagerPrimary",
-        basePackages= { "knowledge.accumulation.springcloud.service.domain" }) //设置Repository所在位置
+        basePackages= {"knowledge.accumulation.springcloud.hystrix.domain"}) //设置Repository所在位置
 public class PrimaryConfig {
  
     @Autowired

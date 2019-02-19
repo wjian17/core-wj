@@ -1,12 +1,14 @@
-package knowledge.accumulation.springcloud.service.domain;
+package knowledge.accumulation.springcloud.hystrix.domain;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
-@Table(name = "tb_table", schema = "db_test", catalog = "")
-public class TbTableEntity {
+@Table(name = "test", schema = "db_test", catalog = "")
+public class TestEntity {
     private int id;
     private String name;
+    private Timestamp createTime;
 
     @Id
     @Column(name = "id")
@@ -28,15 +30,26 @@ public class TbTableEntity {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "create_time")
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TbTableEntity that = (TbTableEntity) o;
+        TestEntity that = (TestEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
 
         return true;
     }
@@ -45,6 +58,7 @@ public class TbTableEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         return result;
     }
 }

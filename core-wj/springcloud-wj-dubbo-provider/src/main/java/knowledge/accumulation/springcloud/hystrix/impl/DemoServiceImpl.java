@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud.service.impl;
+package knowledge.accumulation.springcloud.hystrix.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;

@@ -18,7 +18,7 @@ server:
 spring:
   dubbo:
     server: true
-    scan: knowledge.accumulation.springcloud.service.impl
+    scan: knowledge.accumulation.springcloud.hystrix.impl
     registry:
       address: zookeeper://47.95.224.207:2180
     protocol:

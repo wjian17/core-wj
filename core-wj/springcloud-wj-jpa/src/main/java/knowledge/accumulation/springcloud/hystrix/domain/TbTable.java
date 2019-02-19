@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud.service.domain;
+package knowledge.accumulation.springcloud.hystrix.domain;
 
 import javax.persistence.*;
 

@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-easypoi/springcloud-wj-easypoi.iml" filepath="$PROJECT_DIR$/springcloud-wj-easypoi/springcloud-wj-easypoi.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-ehcache/springcloud-wj-ehcache.iml" filepath="$PROJECT_DIR$/springcloud-wj-ehcache/springcloud-wj-ehcache.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-eureka/springcloud-wj-eureka.iml" filepath="$PROJECT_DIR$/springcloud-wj-eureka/springcloud-wj-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-gof23/springcloud-wj-gof23.iml" filepath="$PROJECT_DIR$/springcloud-wj-gof23/springcloud-wj-gof23.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-jpa/springcloud-wj-jpa.iml" filepath="$PROJECT_DIR$/springcloud-wj-jpa/springcloud-wj-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-mq/springcloud-wj-mq.iml" filepath="$PROJECT_DIR$/springcloud-wj-mq/springcloud-wj-mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-netty/springcloud-wj-netty.iml" filepath="$PROJECT_DIR$/springcloud-wj-netty/springcloud-wj-netty.iml" />
@@ -28,6 +29,7 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-ssm/springcloud-wj-ssm.iml" filepath="$PROJECT_DIR$/springcloud-wj-ssm/springcloud-wj-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-webservice/springcloud-wj-webservice.iml" filepath="$PROJECT_DIR$/springcloud-wj-webservice/springcloud-wj-webservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-wechat/springcloud-wj-wechat.iml" filepath="$PROJECT_DIR$/springcloud-wj-wechat/springcloud-wj-wechat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-zuul/springcloud-wj-zuul.iml" filepath="$PROJECT_DIR$/springcloud-wj-zuul/springcloud-wj-zuul.iml" />
     </modules>
   </component>
 </project>

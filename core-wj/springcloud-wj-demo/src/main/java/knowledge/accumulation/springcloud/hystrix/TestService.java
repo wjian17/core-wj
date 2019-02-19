@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud.service;
+package knowledge.accumulation.springcloud.hystrix;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

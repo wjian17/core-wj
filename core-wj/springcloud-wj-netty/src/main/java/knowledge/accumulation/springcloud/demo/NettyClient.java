@@ -67,7 +67,7 @@ public class NettyClient {
         ChannelFuture future = nettyClient.remoteCall(3);
         Scanner sc = new Scanner(System.in);
         while(true){
-            System.out.println("service input   to client");
+            System.out.println("hystrix input   to client");
             String line = sc.nextLine();
             TestPojo testPojo = new TestPojo();
             testPojo.setName("***************88");

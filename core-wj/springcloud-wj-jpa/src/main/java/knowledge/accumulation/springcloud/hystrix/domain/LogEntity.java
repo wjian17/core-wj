@@ -1,11 +1,11 @@
-package knowledge.accumulation.springcloud.service.domain;
+package knowledge.accumulation.springcloud.hystrix.domain;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "test", schema = "db_test", catalog = "")
-public class TestEntity {
+@Table(name = "log", schema = "db_test", catalog = "")
+public class LogEntity {
     private int id;
     private String name;
     private Timestamp createTime;
@@ -45,11 +45,11 @@ public class TestEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        TestEntity that = (TestEntity) o;
+        LogEntity logEntity = (LogEntity) o;
 
-        if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
+        if (id != logEntity.id) return false;
+        if (name != null ? !name.equals(logEntity.name) : logEntity.name != null) return false;
+        if (createTime != null ? !createTime.equals(logEntity.createTime) : logEntity.createTime != null) return false;
 
         return true;
     }

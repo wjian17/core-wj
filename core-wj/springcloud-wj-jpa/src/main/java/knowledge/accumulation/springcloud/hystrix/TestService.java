@@ -1,4 +1,4 @@
-package knowledge.accumulation.springcloud.service;
+package knowledge.accumulation.springcloud.hystrix;
 
 import org.springframework.stereotype.Service;
 
