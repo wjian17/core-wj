@@ -20,6 +20,7 @@
         <module name="springcloud-wj-easypoi" />
         <module name="springcloud-wj-ehcache" />
         <module name="springcloud-wj-eureka" />
+        <module name="springcloud-wj-gof23" />
         <module name="springcloud-wj-jpa" />
         <module name="springcloud-wj-mq" />
         <module name="springcloud-wj-netty" />
@@ -50,6 +51,7 @@
       <module name="springcloud-wj-easypoi" target="1.7" />
       <module name="springcloud-wj-ehcache" target="1.7" />
       <module name="springcloud-wj-eureka" target="1.7" />
+      <module name="springcloud-wj-gof23" target="1.7" />
       <module name="springcloud-wj-jpa" target="1.7" />
       <module name="springcloud-wj-mq" target="8" />
       <module name="springcloud-wj-netty" target="1.7" />
