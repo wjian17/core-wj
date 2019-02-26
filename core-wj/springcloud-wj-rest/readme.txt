@@ -36,19 +36,19 @@ HystrixCommand注解默认开启熔断，降级及线程池隔离机制【服务
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.1.0.M1</version>
+            <version>2.1.0.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>2.1.0.M1</version>
+            <version>2.1.0.RELEASE</version>
         </dependency>
 
          <dependency>
              <groupId>org.springframework.cloud</groupId>
              <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-             <version>2.1.0.M1</version>
+             <version>2.1.0.RELEASE</version>
          </dependency>
 
 

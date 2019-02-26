@@ -1,13 +1,14 @@
 package knowledge.accumulation.springcloud;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * Hello world!
- *
  */
-public class NettyApplication
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+@SpringBootApplication
+public class NettyApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(NettyApplication.class, args);
     }
 }

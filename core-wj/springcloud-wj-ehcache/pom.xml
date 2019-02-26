@@ -11,7 +11,7 @@
 
     <groupId>com.knowledge.accmulation</groupId>
     <artifactId>springcloud-wj-ehcache</artifactId>
-
+    <version>0.0.1-SNAPSHOT</version>
     <name>springcloud-wj-ehcache</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>

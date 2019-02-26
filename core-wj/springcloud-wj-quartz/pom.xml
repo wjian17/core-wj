@@ -11,7 +11,7 @@
 
     <groupId>knowledge.accumulation.springcloud</groupId>
     <artifactId>springcloud-wj-quartz</artifactId>
-
+    <version>0.0.1-SNAPSHOT</version>
     <name>springcloud-wj-quatz</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>

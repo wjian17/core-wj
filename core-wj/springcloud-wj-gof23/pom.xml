@@ -2,16 +2,17 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>core-wj</artifactId>
-        <groupId>com.kacc.core</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+    <!--<parent>-->
+        <!--<artifactId>core-wj</artifactId>-->
+        <!--<groupId>com.kacc.core</groupId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+    <!--</parent>-->
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>knowledge.accumulation.springcloud</groupId>
     <artifactId>springcloud-wj-gof23</artifactId>
-
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>springcloud-wj-gof23</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
@@ -32,6 +33,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.2</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -80,4 +83,16 @@
             </plugins>
         </pluginManagement>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Releases</name>
+            <url>http://localhost:8099/repository/maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Snapshot</name>
+            <url>http://localhost:8099/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
