@@ -1,4 +1,4 @@
-//package com.knowledge.accumulation.config;// 封装的返回信息枚举类
+//package knowledge.accumulation.springcloud.config;// 封装的返回信息枚举类
 //import com.edu.hart.modules.communicate.ResponseCodeEnum;
 //// 封装的返回信息实体类
 //import com.edu.hart.modules.communicate.ResponseResult;

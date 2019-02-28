@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Service(version = "1.0.0",timeout = 50000)
-public class DemoServiceImpl implements com.knowledge.accumulation.service.DemoService {
+public class DemoServiceImpl implements knowledge.accumulation.springcloud.service.DemoService {
     @Override
     public void testDubbo() {
         System.out.println("testDubbo success.........");
