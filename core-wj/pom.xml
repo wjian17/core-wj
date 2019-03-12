@@ -39,6 +39,7 @@
         <module>springcloud-wj-configClient</module>
         <module>springcloud-wj-zuul</module>
         <module>springcloud-wj-gof23</module>
+        <module>springcloud-wj-thread</module>
     </modules>
 
     <properties>

@@ -30,6 +30,7 @@
         <module name="springcloud-wj-shiro" />
         <module name="springcloud-wj-solr" />
         <module name="springcloud-wj-ssm" />
+        <module name="springcloud-wj-thread" />
         <module name="springcloud-wj-webservice" />
         <module name="springcloud-wj-wechat" />
         <module name="springcloud-wj-zuul" />
@@ -61,6 +62,7 @@
       <module name="springcloud-wj-shiro" target="1.8" />
       <module name="springcloud-wj-solr" target="1.7" />
       <module name="springcloud-wj-ssm" target="1.7" />
+      <module name="springcloud-wj-thread" target="1.8" />
       <module name="springcloud-wj-webservice" target="1.7" />
       <module name="springcloud-wj-wechat" target="1.7" />
       <module name="springcloud-wj-zuul" target="1.7" />
