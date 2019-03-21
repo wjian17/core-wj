@@ -1,90 +1,96 @@
 package knowledge.accumulation.springcloud.config;
 
+import cn.hutool.core.convert.Convert;
+import cn.stylefeng.roses.core.util.ToolUtil;
 import knowledge.accumulation.springcloud.mapper.MenuMapper;
-import knowledge.accumulation.springcloud.utils.MD5Util;
+import knowledge.accumulation.springcloud.mapper.RoleMapper;
+import knowledge.accumulation.springcloud.mapper.UserMapper;
+import knowledge.accumulation.springcloud.module.shiro.pojo.User;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class MyRealm extends AuthorizingRealm {
 
     @Autowired
     private MenuMapper menuMapper;
 
+    @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
+    private RoleMapper roleMapper;
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         //授权【缓存-修改重查询】
-        String usename = principalCollection.getPrimaryPrincipal().toString();
         //查询用户权限
         //null usernames are invalid
 //        模拟jdbcRealm
-//        if (principals == null) {
-//            throw new AuthorizationException("PrincipalCollection method argument cannot be null.");
-//        }
-//
-//        String username = (String) getAvailablePrincipal(principals);
-//
-//        Connection conn = null;
-//        Set<String> roleNames = null;
-//        Set<String> permissions = null;
-//        try {
-//            conn = dataSource.getConnection();
-//
-//            // Retrieve roles and permissions from database
-//            roleNames = getRoleNamesForUser(conn, username);
-//            if (permissionsLookupEnabled) {
-//                permissions = getPermissions(conn, username, roleNames);
-//            }
-//
-//        } catch (SQLException e) {
-//            final String message = "There was a SQL error while authorizing user [" + username + "]";
-//            if (log.isErrorEnabled()) {
-//                log.error(message, e);
-//            }
-//
-//            // Rethrow any SQL errors as an authorization exception
-//            throw new AuthorizationException(message, e);
-//        } finally {
-//            JdbcUtils.closeConnection(conn);
-//        }
-//
-//        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo(roleNames);
-//        info.setStringPermissions(permissions);
-//        return info;
-
-        return null;
+        if (principalCollection == null) {
+            throw new AuthorizationException("PrincipalCollection method argument cannot be null.");
+        }
+        String username = (String) getAvailablePrincipal(principalCollection);
+        Set<String> permissionSet = new HashSet<>();
+        Set<String> roleNameSet = new HashSet<>();
+        try {
+            User user = userMapper.getByAccount(username);
+            //用户角色数组
+            Long[] roleArray = Convert.toLongArray(user.getRoleId());
+            //获取用户角色列表
+            for (Long roleId : roleArray) {
+                List<String> permissions = menuMapper.getResUrlsByRoleId(roleId);
+                if (permissions != null) {
+                    for (String permission : permissions) {
+                        if (ToolUtil.isNotEmpty(permission)) {
+                            permissionSet.add(permission);
+                        }
+                    }
+                }
+                String roleName = roleMapper.selectNameById(roleId);
+                if (ToolUtil.isNotEmpty(roleName)) {
+                    roleNameSet.add(roleName);
+                }
+            }
+        } catch (Exception e) {
+            String message = "授权失败";
+            throw new AuthorizationException(message, e);
+        }
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        info.addStringPermissions(permissionSet);
+        info.addRoles(roleNameSet);
+        return info;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         //认证登录  可以参照jdbcRealm中的实现方法
-        Object user = authenticationToken.getPrincipal();
-        System.out.println("AuthenticationInfo");
+        Object usename = authenticationToken.getPrincipal();
+        if (usename == null) {
+            throw new AccountException("Null usernames are not allowed by this realm.");
+        }
         SimpleAuthenticationInfo simpleAuthenticationInfo = null;
         try {
-            String passwordEcr = MD5Util.MD5("password", ByteSource.Util.bytes("salt").getBytes(),1);
-            System.out.println(passwordEcr);
-            if(user.equals("username")) {
-                simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, "67a1e09bb1f83f5007dc119c14d663aa", ByteSource.Util.bytes("salt"), getName());
-            }else if(user.equals("username1")){
-                simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, "62b2648f052d6599bdc84863d712a2d6", ByteSource.Util.bytes("salt"), getName());
-            }
-        }catch (Exception e){
+            User user = userMapper.getByAccount(usename.toString());
+            Md5Hash md5Hash = new Md5Hash(authenticationToken.getCredentials(),ByteSource.Util.bytes(user.getSalt()),2);
+            simpleAuthenticationInfo = new SimpleAuthenticationInfo(user.getAccount(), user.getPassword().toCharArray(), ByteSource.Util.bytes(user.getSalt()), getName());
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return simpleAuthenticationInfo;
-//        String username = (String)authenticationToken.getPrincipal();//用户名
-//        //查询密码信息
-//        String password = "";
-//        SimpleAuthenticationInfo simpleAuthenticationInfo = null;
     }
 
     public void clearCachedAuthorizationInfo() {

@@ -55,7 +55,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/userLogin/logout", "logout");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-        shiroFilterFactoryBean.setLoginUrl("/userLogin/login");
+        shiroFilterFactoryBean.setLoginUrl("/userLogin/loginUrl");
 //        shiroFilterFactoryBean.setSuccessUrl("/userLogin/index");//默认跳转上一个URL   首页登录后
         shiroFilterFactoryBean.setUnauthorizedUrl("/userLogin/unauth");
         return shiroFilterFactoryBean;
@@ -152,7 +152,7 @@ public class ShiroConfig {
         //散列算法:这里使用MD5算法;
         hashedCredentialsMatcher.setHashAlgorithmName("md5");
         //散列的次数，比如散列两次，相当于 md5(md5(""))
-        hashedCredentialsMatcher.setHashIterations(1);
+        hashedCredentialsMatcher.setHashIterations(2);
         hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);
         return hashedCredentialsMatcher;
     }
