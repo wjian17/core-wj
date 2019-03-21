@@ -111,10 +111,53 @@ Future 线程执行后的结果，通过get获取，无参数，阻塞等待线�
 
 Java通过Executors提供四种线程池，分别为：
 newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程60s自动销毁空闲线程，若无可回收，则新建线程。
-
+内部应用或测试应用，即时性应用，测试应用用户处理Fixed中的数量
 
 newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
 BlockingQueue<Runnable>
 
 newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。
+     Executors.newScheduledThreadPool(3).scheduleAtFixedRate(() -> {
+            System.out.println("");
+        },1,10, TimeUnit.SECONDS);
+3个线程，一秒后执行，间隔10秒依次执行。随机挑选3个线程中的任务执行，【DelaydQueue】电信行业的数据整理
+
 newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行
+单例线程，
+
+
+
+
+ForkJoinPool
+应用场景，科学计算，天文场景，数据分析 统计
+递归完成复杂任务，必须是ForkJoinTask子类型，提供分支和合并的能力
+没有所谓的容量，默认为1个线程，根据任务分支为子线程，子线程任务结束后自动合并 fork join
+ForkJoinTask，分支合并任务
+RecursiveTask<Long> 返回值类型Long,compute
+RecursiveAction
+
+
+
+
+
+
+ThreadPoolExecutor
+   public static ExecutorService newFixedThreadPool(int nThreads) {
+        return new ThreadPoolExecutor(nThreads, nThreads,
+                                      0L, TimeUnit.MILLISECONDS,
+                                      new LinkedBlockingQueue<Runnable>());
+    }
+
+      public ThreadPoolExecutor(int corePoolSize,
+                                  int maximumPoolSize,
+                                  long keepAliveTime,
+                                  TimeUnit unit,
+                                  BlockingQueue<Runnable> workQueue) {
+            this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
+                 Executors.defaultThreadFactory(), defaultHandler);
+        }
+    corePoolSize：线程数量核心，最少
+    maximumPoolSize：最大
+    keepAliveTime：生命周期 0永久
+    unit：单位
+    workQueue：阻塞队列，任务队列，泛型必须是runnable

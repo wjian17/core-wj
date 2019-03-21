@@ -1,17 +1,18 @@
 package knowledge.accumulation.springcloud.config;
 
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.authc.pam.AllSuccessfulStrategy;
+import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.mgt.RememberMeManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
+import org.apache.shiro.web.filter.authc.LogoutFilter;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
-import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -35,19 +36,27 @@ public class ShiroConfig {
         formAuthenticationFilter.setUsernameParam("username");
         formAuthenticationFilter.setPasswordParam("password");
         formAuthenticationFilter.setRememberMeParam("remerberMe");
-        formAuthenticationFilter.setSuccessUrl("/userLogin/index");
+//        formAuthenticationFilter.setSuccessUrl("/userLogin/index");
+        LogoutFilter logoutFilter = new LogoutFilter();
+        logoutFilter.setRedirectUrl("/toLogin"); //配置logout跳转地址
+        filters.put("logout",logoutFilter);
         filters.put("authc",formAuthenticationFilter);
         shiroFilterFactoryBean.setFilters(filters);
         filterChainDefinitionMap.put("/webjars/**", "anon");
         filterChainDefinitionMap.put("/web/**", "authc");
         filterChainDefinitionMap.put("/unauth", "anon");
-        filterChainDefinitionMap.put("/userLogin/login", "authc");
-        filterChainDefinitionMap.put("/userLogin/toLogin", "anon");
+        filterChainDefinitionMap.put("/userLogin/login", "anon");
+        filterChainDefinitionMap.put("/userLogin/unauth", "anon");
+        filterChainDefinitionMap.put("/userLogin/toLogin", "authc");
+//        filterChainDefinitionMap.put("/userLogin/index", "anon");
+        filterChainDefinitionMap.put("/userLogin/testAopHandler", "anon");
         filterChainDefinitionMap.put("/userLogin/error", "anon");
+        filterChainDefinitionMap.put("/userLogin/index", "user");
         filterChainDefinitionMap.put("/**", "authc");
+        filterChainDefinitionMap.put("/userLogin/logout", "logout");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         shiroFilterFactoryBean.setLoginUrl("/userLogin/login");
-        shiroFilterFactoryBean.setSuccessUrl("/userLogin/index");//默认跳转上一个URL   首页登录后
+//        shiroFilterFactoryBean.setSuccessUrl("/userLogin/index");//默认跳转上一个URL   首页登录后
         shiroFilterFactoryBean.setUnauthorizedUrl("/userLogin/unauth");
         return shiroFilterFactoryBean;
     }
@@ -67,6 +76,10 @@ public class ShiroConfig {
         mySecurityMananger.setCacheManager(getEhCacheManager());
         mySecurityMananger.setSessionManager(sessionManager());
         mySecurityMananger.setRememberMeManager(rememberMeManager());
+        ModularRealmAuthenticator authenticator = new ModularRealmAuthenticator();
+        authenticator.setAuthenticationStrategy(new AllSuccessfulStrategy());
+        authenticator.setRealms(mySecurityMananger.getRealms());
+        mySecurityMananger.setAuthenticator(authenticator);
         return mySecurityMananger;
     }
 
@@ -83,13 +96,13 @@ public class ShiroConfig {
      * https://www.cnblogs.com/tuifeideyouran/p/7696055.html
      * @return
      */
-    @Bean
-    @ConditionalOnMissingBean
-    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
-        DefaultAdvisorAutoProxyCreator defaultAAP = new DefaultAdvisorAutoProxyCreator();
-        defaultAAP.setProxyTargetClass(true);
-        return defaultAAP;
-    }
+//    @Bean
+//    @ConditionalOnMissingBean
+//    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
+//        DefaultAdvisorAutoProxyCreator defaultAAP = new DefaultAdvisorAutoProxyCreator();
+//        defaultAAP.setProxyTargetClass(true);
+//        return defaultAAP;
+//    }
 
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(MySecurityMananger mySecurityMananger) {

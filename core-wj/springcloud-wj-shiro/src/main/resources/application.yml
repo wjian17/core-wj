@@ -41,9 +41,9 @@ spring:
     #autoCommit: true
     mysql:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://47.95.224.207:3306/db_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://47.95.224.207:3306/manager?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
-      password: root
+      password: Root_1234
     oracle:
       driverClassName: oracle.jdbc.driver.OracleDriver
       url: jdbc:oracle:thin:@192.168.1.113:1521:biom
@@ -58,9 +58,9 @@ spring:
       validationQuery: select 1 from sysibm.sysdummy1
     log:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/wjian?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      url: jdbc:mysql://47.95.224.207:3306/manager?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
       username: root
-      password: root
+      password: Root_1234
 
 demo:
   data:

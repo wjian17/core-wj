@@ -85,7 +85,7 @@ binlog-do-db=db_test
 
 
 主数据库配置：执行
-CREATE USER 'slave'@'192.168.1.101' IDENTIFIED BY 'Slave_pass';#创建用户
+CREATE USER 'slave'@'192.168.1.101' IDENTIFIED BY 'Slave_1234';#创建用户
 GRANT REPLICATION SLAVE ON *.* TO 'slave'@'192.168.1.101' identified by 'Slave_1234';#分配权限
 flush privileges;   #刷新权限
 
