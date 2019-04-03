@@ -26,5 +26,10 @@ public class LoginController {
         return "login";
     }
 
+    @RequestMapping("/")
+    public String index(Model model) {
+        return "index";
+    }
+
 
 }

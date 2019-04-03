@@ -1,6 +1,7 @@
 package knowledge.accumulation.springcloud.config.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>User: Zhang Kaitao
@@ -10,9 +11,14 @@ import java.io.Serializable;
 public class Client implements Serializable {
 
     private Long id;
+
     private String clientName;
+
     private String clientId;
+
     private String clientSecret;
+
+    private Date createTime;
 
     public Long getId() {
         return id;

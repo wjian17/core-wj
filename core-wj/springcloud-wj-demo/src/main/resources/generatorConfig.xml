@@ -22,16 +22,16 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="knowledge.accumulation.springcloud" targetProject="java/knowledge/accumulation/springcloud">
+        <javaModelGenerator targetPackage="knowledge.accumulation.springcloud.mybatis_generator" targetProject="D:\workspace\core-wj\springcloud-wj-demo\src\main\java\">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成映射文件的包名和位置-->
-        <sqlMapGenerator targetPackage="mapping_generated" targetProject="java/knowledge/accumulation/springcloud">
+        <sqlMapGenerator targetPackage="knowledge.accumulation.springcloud.mybatis_generator" targetProject="D:\workspace\core-wj\springcloud-wj-demo\src\main\java\">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="knowledge.accumulation.springcloud" targetProject="java/knowledge/accumulation/springcloud">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="knowledge.accumulation.springcloud.mybatis_generator" targetProject="D:\workspace\core-wj\springcloud-wj-demo\src\main\java\">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->

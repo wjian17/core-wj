@@ -33,7 +33,7 @@ public class OAuth2ShiroConfig {
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>(8);
         OAuth2AuthenticationFilter oAuth2AuthenticationFilter = new OAuth2AuthenticationFilter();
         oAuth2AuthenticationFilter.setAuthcCodeParam("code");
-        oAuth2AuthenticationFilter.setFailureUrl("/oauth2Failure.jsp");
+        oAuth2AuthenticationFilter.setFailureUrl("/oauth2Failure");
         LogoutFilter logoutFilter = new LogoutFilter();
         logoutFilter.setRedirectUrl("/toLogin"); //配置logout跳转地址
         filters.put("logout",logoutFilter);
@@ -44,25 +44,15 @@ public class OAuth2ShiroConfig {
         filterChainDefinitionMap.put("/logout", "logout");
         filterChainDefinitionMap.put("/**", "user");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-        shiroFilterFactoryBean.setLoginUrl("http://localhost:8758/authorize?client_id=c1ebe466-1cdc-4bd3-ab69-77c3561b9dee&amp;response_type=code&amp;redirect_uri=http://localhost:8759/oauth2-login");
+        shiroFilterFactoryBean.setLoginUrl("http://localhost:8758/authorize?client_id=c1ebe466-1cdc-4bd3-ab69-77c3561b9dee&response_type=code&redirect_uri=http://localhost:8759/oauth2-login");
+        shiroFilterFactoryBean.setSuccessUrl("http://localhost:8758/");
         return shiroFilterFactoryBean;
     }
 
     @Bean
     public OAuth2Realm userShiroRealm() {
         OAuth2Realm oAuth2Realm = new OAuth2Realm();
-        oAuth2Realm.setCredentialsMatcher(hashedCredentialsMatcher());
-//        property name="cachingEnabled" value="true"/>
-//  <property name="authenticationCachingEnabled" value="true"/>
-//  <property name="authenticationCacheName" value="authenticationCache"/>
-//  <property name="authorizationCachingEnabled" value="true"/>
-//  <property name="authorizationCacheName" value="authorizationCache"/>
-//  <property name="clientId" value="c1ebe466-1cdc-4bd3-ab69-77c3561b9dee"/>
-//  <property name="clientSecret" value="d8346ea2-6017-43ed-ad68-19c0f971738b"/>
-//  <property name="accessTokenUrl"
-//        value="http://localhost:8080/chapter17-server/accessToken"/>
-//  <property name="userInfoUrl" value="http://localhost:8080/chapter17-server/userInfo"/>
-//  <property name="redirectUrl" value="http://localhost:9080/chapter17-client/oauth2-login"/>
+//        oAuth2Realm.setCredentialsMatcher(hashedCredentialsMatcher());
         oAuth2Realm.setCachingEnabled(true);
         oAuth2Realm.setAuthenticationCachingEnabled(true);
         oAuth2Realm.setAuthenticationCacheName("authenticationCache");

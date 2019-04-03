@@ -46,6 +46,6 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client findByClientSecret(String clientSecret) {
-        return null;
+        return clientMapper.findByClientSecret(clientSecret);
     }
 }

@@ -5,6 +5,7 @@ import knowledge.accumulation.springcloud.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
@@ -47,6 +48,8 @@ public class UserRealm extends AuthorizingRealm {
                 ByteSource.Util.bytes(user.getSalt()),//salt=username+salt
                 getName()  //realm name
         );
+        Md5Hash md5Hash = new Md5Hash(authenticationInfo.getCredentials(),ByteSource.Util.bytes(user.getSalt()),2);
+        System.out.println(md5Hash);
         return authenticationInfo;
     }
 
