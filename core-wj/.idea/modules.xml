@@ -25,6 +25,8 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-redis/springcloud-wj-redis.iml" filepath="$PROJECT_DIR$/springcloud-wj-redis/springcloud-wj-redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-rest/springcloud-wj-rest.iml" filepath="$PROJECT_DIR$/springcloud-wj-rest/springcloud-wj-rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-shiro/springcloud-wj-shiro.iml" filepath="$PROJECT_DIR$/springcloud-wj-shiro/springcloud-wj-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-shiroclient/springcloud-wj-shiroclient.iml" filepath="$PROJECT_DIR$/springcloud-wj-shiroclient/springcloud-wj-shiroclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-shiroserver/springcloud-wj-shiroserver.iml" filepath="$PROJECT_DIR$/springcloud-wj-shiroserver/springcloud-wj-shiroserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-solr/springcloud-wj-solr.iml" filepath="$PROJECT_DIR$/springcloud-wj-solr/springcloud-wj-solr.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-ssm/springcloud-wj-ssm.iml" filepath="$PROJECT_DIR$/springcloud-wj-ssm/springcloud-wj-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-thread/springcloud-wj-thread.iml" filepath="$PROJECT_DIR$/springcloud-wj-thread/springcloud-wj-thread.iml" />

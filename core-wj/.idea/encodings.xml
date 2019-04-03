@@ -24,6 +24,8 @@
     <file url="file://$PROJECT_DIR$/springcloud-wj-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-rest" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-shiro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-wj-shiroclient" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-wj-shiroserver" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-solr" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-ssm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-thread" charset="UTF-8" />

@@ -28,6 +28,8 @@
         <module name="springcloud-wj-redis" />
         <module name="springcloud-wj-rest" />
         <module name="springcloud-wj-shiro" />
+        <module name="springcloud-wj-shiroclient" />
+        <module name="springcloud-wj-shiroserver" />
         <module name="springcloud-wj-solr" />
         <module name="springcloud-wj-ssm" />
         <module name="springcloud-wj-thread" />
@@ -60,6 +62,8 @@
       <module name="springcloud-wj-redis" target="1.8" />
       <module name="springcloud-wj-rest" target="1.8" />
       <module name="springcloud-wj-shiro" target="1.8" />
+      <module name="springcloud-wj-shiroclient" target="1.8" />
+      <module name="springcloud-wj-shiroserver" target="1.8" />
       <module name="springcloud-wj-solr" target="1.8" />
       <module name="springcloud-wj-ssm" target="1.8" />
       <module name="springcloud-wj-thread" target="1.8" />
