@@ -89,3 +89,12 @@ logging:
     com.grgbanking.biometrics: DEBUG
   path: springcloud-wj-database
   config: classpath:logback.xml
+
+
+#cas配置
+cas:
+  client-name: mfgClient
+  server:
+    url: http://localhost:8091
+  project:
+    url: http://localhost:9003

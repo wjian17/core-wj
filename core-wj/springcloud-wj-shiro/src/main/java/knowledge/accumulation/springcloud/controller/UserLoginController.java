@@ -1,8 +1,11 @@
 package knowledge.accumulation.springcloud.controller;
 
+import knowledge.accumulation.springcloud.config.JWTToken;
 import knowledge.accumulation.springcloud.response.ResponseBean;
+import knowledge.accumulation.springcloud.utils.jwt.JWTUtil;
 import net.sf.ehcache.CacheManager;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
@@ -61,6 +64,7 @@ public class UserLoginController {
             String remember = request.getParameter("remember");
             Subject currentUser = SecurityUtils.getSubject();
             UsernamePasswordToken token = new UsernamePasswordToken(username, password.toCharArray());//
+            AuthenticationToken token2 = new JWTToken(request.getHeader("Authorization"));//
             //如果开启了记住我功能
             if ("on".equals(remember)) {
                 token.setRememberMe(true);
@@ -68,7 +72,9 @@ public class UserLoginController {
                 token.setRememberMe(false);
             }
             //执行shiro登录操作
-            currentUser.login(token);
+//            currentUser.login(token);
+            JWTUtil.sign("admin","3dd80d9a1d3f54c28938feda6b2e3f91");
+            currentUser.login(token2);
         }catch (Exception e){
             logger.error("test logger error:{}",e.getMessage());
             e.printStackTrace();

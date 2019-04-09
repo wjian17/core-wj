@@ -31,5 +31,10 @@ public class LoginController {
         return "index";
     }
 
+    @RequestMapping("/test")
+    public String test(Model model) {
+        return "test";
+    }
+
 
 }

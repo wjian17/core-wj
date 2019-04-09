@@ -39,8 +39,10 @@ public class ShiroConfig {
 //        formAuthenticationFilter.setSuccessUrl("/userLogin/index");
         LogoutFilter logoutFilter = new LogoutFilter();
         logoutFilter.setRedirectUrl("/toLogin"); //配置logout跳转地址
+        JWTFilter jwtFilter = new JWTFilter();
         filters.put("logout",logoutFilter);
-        filters.put("authc",formAuthenticationFilter);
+//        filters.put("authc",formAuthenticationFilter);
+        filters.put("jwt",jwtFilter);
         shiroFilterFactoryBean.setFilters(filters);
         filterChainDefinitionMap.put("/webjars/**", "anon");
         filterChainDefinitionMap.put("/web/**", "authc");
@@ -52,6 +54,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/userLogin/testAopHandler", "anon");
         filterChainDefinitionMap.put("/userLogin/error", "anon");
         filterChainDefinitionMap.put("/userLogin/index", "user");
+        filterChainDefinitionMap.put("/jwt/**", "jwt");
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/userLogin/logout", "logout");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
@@ -69,9 +72,17 @@ public class ShiroConfig {
     }
 
     @Bean
-    public MySecurityMananger getMySecurityMananger(MyRealm myRealm){
+    public JWTRealm jwtRealm() {
+        JWTRealm jwtRealm = new JWTRealm();
+//        jwtRealm.setCredentialsMatcher(hashedCredentialsMatcher());
+        return jwtRealm;
+    }
+
+    @Bean
+    public MySecurityMananger getMySecurityMananger(MyRealm myRealm,JWTRealm jwtRealm){
         MySecurityMananger mySecurityMananger = new MySecurityMananger();
         mySecurityMananger.setRealm(myRealm);
+        mySecurityMananger.setRealm(jwtRealm);
         //配置 ehcache缓存管理器 参考博客：
         mySecurityMananger.setCacheManager(getEhCacheManager());
         mySecurityMananger.setSessionManager(sessionManager());
@@ -151,6 +162,7 @@ public class ShiroConfig {
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
         //散列算法:这里使用MD5算法;
         hashedCredentialsMatcher.setHashAlgorithmName("md5");
+//        hashedCredentialsMatcher.setHashAlgorithmName(SimpleHash.);
         //散列的次数，比如散列两次，相当于 md5(md5(""))
         hashedCredentialsMatcher.setHashIterations(2);
         hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);

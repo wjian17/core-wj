@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -30,6 +31,7 @@
         <module name="springcloud-wj-shiro" />
         <module name="springcloud-wj-shiroclient" />
         <module name="springcloud-wj-shiroserver" />
+        <module name="springcloud-wj-shirosso" />
         <module name="springcloud-wj-solr" />
         <module name="springcloud-wj-ssm" />
         <module name="springcloud-wj-thread" />
@@ -64,6 +66,7 @@
       <module name="springcloud-wj-shiro" target="1.8" />
       <module name="springcloud-wj-shiroclient" target="1.8" />
       <module name="springcloud-wj-shiroserver" target="1.8" />
+      <module name="springcloud-wj-shirosso" target="1.8" />
       <module name="springcloud-wj-solr" target="1.8" />
       <module name="springcloud-wj-ssm" target="1.8" />
       <module name="springcloud-wj-thread" target="1.8" />

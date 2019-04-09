@@ -42,6 +42,7 @@
         <module>springcloud-wj-thread</module>
         <module>springcloud-wj-shiroserver</module>
         <module>springcloud-wj-shiroclient</module>
+        <module>springcloud-wj-shirosso</module>
     </modules>
 
     <properties>
