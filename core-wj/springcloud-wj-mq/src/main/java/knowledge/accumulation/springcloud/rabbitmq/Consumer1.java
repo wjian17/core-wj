@@ -11,7 +11,7 @@ public class Consumer1 {
 
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setHost("47.95.224.207");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 

@@ -1,11 +1,11 @@
 package knowledge.accumulation.springcloud.rabbitmq;
 
-import java.io.IOException;
-import java.util.Date;
-import java.util.Map;
-import java.util.concurrent.TimeoutException;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 
-import com.rabbitmq.client.*;
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 /**
  *  * RabbitMQ 生产者
@@ -30,8 +30,8 @@ public class Producer {
             factory.setUsername("guest");
             factory.setPassword("guest");
 // 设置 RabbitMQ 地址
-            factory.setHost("localhost");
-            factory.setPort(5672);
+            factory.setHost("47.95.224.207");
+            factory.setPort(15672);
 // 建立到代理服务器到连接
             connection = factory.newConnection();
             channel = connection.createChannel();

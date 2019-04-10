@@ -1,9 +1,9 @@
 package knowledge.accumulation.springcloud.rabbitmq;
 
+import com.rabbitmq.client.*;
+
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
-
-import com.rabbitmq.client.*;
 
 /**
  *  * RabbitMQ 消费者
@@ -27,7 +27,7 @@ public class Consumer {
             factory = new ConnectionFactory();
             factory.setUsername("guest");
             factory.setPassword("guest");
-            factory.setHost("localhost");
+            factory.setHost("47.95.224.207");
 //            factory.setPort(5672);
 // 建立到代理服务器到连接
             connection = factory.newConnection();

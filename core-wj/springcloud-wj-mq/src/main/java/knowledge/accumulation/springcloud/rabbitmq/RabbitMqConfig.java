@@ -6,9 +6,7 @@ import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class RabbitMqConfig {
@@ -26,8 +24,8 @@ public class RabbitMqConfig {
      *
      * @return the amqp template
      */
-    @Primary
-    @Bean
+//    @Primary
+//    @Bean
     public AmqpTemplate amqpTemplate() {
         Logger log = LoggerFactory.getLogger(RabbitTemplate.class);
 //          使用jackson 消息转换器

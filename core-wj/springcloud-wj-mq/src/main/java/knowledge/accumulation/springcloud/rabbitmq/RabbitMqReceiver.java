@@ -12,12 +12,13 @@ import java.util.Date;
 @Component
 public class RabbitMqReceiver {
 
+    ThreadLocal<Integer> calc = new ThreadLocal<Integer>();
+
 //    @RabbitHandler
 //    @RabbitListener(queues = "Queue",containerFactory = "rabbitListenerContainerFactory")
 //    public void process(byte[] body) {
 //        System.out.println("Receiver:" + new String(body));
 //    }
-
 
 ////        @RabbitHandler
 //    @RabbitListener(queues = "topic.message")
@@ -86,7 +87,34 @@ public class RabbitMqReceiver {
             key = "publish_message",
             exchange = @Exchange("publish_message")
     ))
-    public void execute6(String content){
+
+    /**
+     * 消费者确认：basicAck(long deliveryTag, boolean multiple)，其中deliveryTag 可以看作消息的编号，
+     * 它是一个64 位的长整型值；multiple一般设为false，如果设为true则表示确认当前deliveryTag 编号及之前所有未被当前消费者确认的消息。
+     *
+     * 消费者拒绝：basicNack(long deliveryTag, boolean multiple, boolean requeue)，其中deliveryTag 可以看作消息的编号，
+     * 它是一个64 位的长整型值。multiple一般设为false，如果设为true则表示拒绝当前deliveryTag 编号及之前所有未被当前消费者确认的消息。
+     * requeue参数表示是否重回队列，如果requeue 参数设置为true ，则RabbitMQ 会重新将这条消息存入队列尾部（注意是队列尾部），
+     * 等待继续投递给订阅该队列的消费者，当然也可能是自己；如果requeue 参数设置为false ，则RabbitMQ立即会把消息从队列中移除，
+     * 而不会把它发送给新的消费者。
+     *
+     */
+    public void execute6(String content,Channel channel,Message me) throws Exception{
+        long deliveryTag = me.getMessageProperties().getDeliveryTag();
+        //消息确认
+//        channel.basicAck(deliveryTag,false);
+        //消息失败
+
+        if(calc.get()==null){
+            calc.set(0);
+        }
+        System.out.println(Thread.currentThread().getName()+"消息发送::::::::"+calc.get());
+        if(calc.get() > 10){
+            channel.basicAck(deliveryTag,false);
+        }else{
+            channel.basicNack(deliveryTag,false,true);
+            calc.set(calc.get()+1);
+        }
         System.out.println("publish_message2----------->>>"+content);
     }
     @RabbitHandler

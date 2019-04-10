@@ -2,6 +2,8 @@ package knowledge.accumulation.springcloud.rabbitmq;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageDeliveryMode;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,9 @@ public class RabbitMqSender implements RabbitTemplate.ReturnCallback {
  
     @Autowired
     private AmqpTemplate amqpTemplate;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
  
     public void send(){
         String content = "hello" + new Date();
@@ -24,21 +29,30 @@ public class RabbitMqSender implements RabbitTemplate.ReturnCallback {
     public void send1() throws Exception{
         String content = "hello" + new Date();
         System.out.println("sender:"+content);
-        ((RabbitTemplate)this.amqpTemplate).setReturnCallback(this);
-        ((RabbitTemplate)this.amqpTemplate).setConfirmCallback((correlationData, ack, cause) -> {
+        this.rabbitTemplate.setReturnCallback(this);
+        this.rabbitTemplate.setConfirmCallback((correlationData, ack, cause) -> {
             if (!ack) {
                 System.out.println("HelloSender消息发送失败" + cause + correlationData.toString());
             } else {
-                System.out.println("HelloSender 消息发送成功 ");
+                System.out.println("HelloSender 消息发送成功 "+ cause );
+                if(correlationData!=null){
+                    System.out.println(correlationData.getId());
+                }
             }
         });
 //        this.amqpTemplate .convertAndSend("tp.exchage","topic.massage","topicmessage");
-        amqpTemplate.convertAndSend("pikachu_e","pikachu_1","send content :"+content);
-        amqpTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
-        amqpTemplate.convertAndSend("topic_change","topic_message","send content :"+content);
-        amqpTemplate.convertAndSend("topic_change","topic_#","send content :"+content);
-        amqpTemplate.convertAndSend("publish_message","publish_message","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_e","pikachu_1","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
+        rabbitTemplate.convertAndSend("topic_change","topic_message","send content :"+content);
+        rabbitTemplate.convertAndSend("topic_change","topic_#","send content :"+content);
+        rabbitTemplate.convertAndSend("publish_message","publish_message","send content :"+content);
 //        this.amqpTemplate .convertAndSend("tp.exchage","topic.massages","topicmessages");
+        rabbitTemplate.convertAndSend("publish_message","publish_message", "send content :"+content,
+                message -> {
+                    message.getMessageProperties().setDeliveryMode(MessageDeliveryMode.PERSISTENT);
+                    return message;
+                },
+                new CorrelationData(new Date().toString()));
     }
 
 
