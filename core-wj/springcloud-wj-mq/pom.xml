@@ -45,6 +45,12 @@
             <version>5.15.7</version>
         </dependency>
 
+        <!--&lt;!&ndash;kafka支持&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.kafka</groupId>-->
+            <!--<artifactId>spring-kafka</artifactId>-->
+            <!--<version>2.1.0.RELEASE</version>&lt;!&ndash;$NO-MVN-MAN-VER$&ndash;&gt;-->
+        <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/javax.jms/javax.jms-api -->
         <dependency>

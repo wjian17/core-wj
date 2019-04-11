@@ -3,17 +3,23 @@ package knowledge.accumulation.springcloud.rabbitmq;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 @EnableScheduling
 @Component
 public class Producer1 {
 
     @Autowired
-    private RabbitMqSender rabbitMqSender;
+    private RabbitMqConfig1 rabbitMqSender;
+
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
     private static String QUEUE_NAME = "Queue";
     public static void main(String[] args) throws Exception{
@@ -34,8 +40,20 @@ public class Producer1 {
 
     @Scheduled(fixedDelay=20000)//每3s执行1次
     public void send() throws Exception{
-        System.out.println("send topic");
-        this.rabbitMqSender.send();
-        this.rabbitMqSender.send1();
+        String content = new Date().toString();
+        rabbitTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_ekkkk","pikachu_#","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_e","pikachu11_#","send content :"+content);
+//        rabbitTemplate.convertAndSend("topic_change","topic_message","send content :"+content);
+//        rabbitTemplate.convertAndSend("topic_change","topic_#","send content :"+content);
+        rabbitTemplate.convertAndSend("publish_message","publish_message","send content :"+content);
+////        this.amqpTemplate .convertAndSend("tp.exchage","topic.massages","topicmessages");
+//        rabbitTemplate.convertAndSend("publish_message","publish_message", "send content :"+content,
+//                message -> {
+//                    message.getMessageProperties().setDeliveryMode(MessageDeliveryMode.PERSISTENT);
+//                    return message;
+//                },
+//                new CorrelationData(new Date().toString()));
     }
+
 }

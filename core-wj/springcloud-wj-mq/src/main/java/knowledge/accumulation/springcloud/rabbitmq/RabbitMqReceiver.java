@@ -48,7 +48,9 @@ public class RabbitMqReceiver {
             key = "pikachu_2",
             exchange = @Exchange("pikachu_e")
     ))
-    public void execute2(String content){
+    public void execute2(String content, Channel channel, Message message) throws Exception{
+        long deliveryTag = message.getMessageProperties().getDeliveryTag();
+        channel.basicAck(deliveryTag,false);
         System.out.println("execute2----------->>>"+content);
     }
 
@@ -111,7 +113,12 @@ public class RabbitMqReceiver {
         System.out.println(Thread.currentThread().getName()+"消息发送::::::::"+calc.get());
         if(calc.get() > 10){
             channel.basicAck(deliveryTag,false);
+            calc.set(0);
         }else{
+            if(calc.get()==4){
+//                calc.set(5);
+                throw new Exception();
+            }
             channel.basicNack(deliveryTag,false,true);
             calc.set(calc.get()+1);
         }

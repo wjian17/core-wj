@@ -10,8 +10,6 @@
         <module name="springcloud-wj-api" />
         <module name="springcloud-wj-business" />
         <module name="springcloud-wj-common" />
-        <module name="springcloud-wj-configClient" />
-        <module name="springcloud-wj-configServer" />
         <module name="springcloud-wj-database" />
         <module name="springcloud-wj-demo" />
         <module name="springcloud-wj-domain" />
