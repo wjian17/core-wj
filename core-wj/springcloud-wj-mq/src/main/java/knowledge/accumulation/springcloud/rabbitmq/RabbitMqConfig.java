@@ -25,11 +25,6 @@ public class RabbitMqConfig implements RabbitTemplate.ConfirmCallback,RabbitTemp
         this.rabbitTemplate.setMandatory(true);
     }
 
-////    第一个参数是exchange，第二个参数是routingkey，第三个参数是发送的消息message
-//    public void RabbitMqSender() throws Exception {
-//        this.rabbitTemplate.setReturnCallback(this);
-//        this.rabbitTemplate.setConfirmCallback(this);
-//    }
 
 
     @Override
@@ -40,7 +35,7 @@ public class RabbitMqConfig implements RabbitTemplate.ConfirmCallback,RabbitTemp
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
         if (!ack) {
-            System.out.println("HelloSender消息发送失败" + cause + correlationData.toString());
+            System.out.println("HelloSender消息发送失败" + cause);
         } else {
             System.out.println("HelloSender 消息发送成功 "+ cause );
             if(correlationData!=null){

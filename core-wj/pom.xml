@@ -35,14 +35,13 @@
         <module>springcloud-wj-easypoi</module>
         <module>springcloud-wj-wechat</module>
         <module>springcloud-wj-api</module>
-        <module>springcloud-wj-configServer</module>
-        <module>springcloud-wj-configClient</module>
         <module>springcloud-wj-zuul</module>
         <module>springcloud-wj-gof23</module>
         <module>springcloud-wj-thread</module>
         <module>springcloud-wj-shiroserver</module>
         <module>springcloud-wj-shiroclient</module>
         <module>springcloud-wj-shirosso</module>
+        <module>springcloud-wj-dubbo-admin</module>
     </modules>
 
     <properties>

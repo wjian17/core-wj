@@ -2,5 +2,5 @@ package knowledge.accumulation.springcloud.service;
 
 public interface DemoService {
 
-    void testDubbo();
+    void testDubbo(long id);
 }

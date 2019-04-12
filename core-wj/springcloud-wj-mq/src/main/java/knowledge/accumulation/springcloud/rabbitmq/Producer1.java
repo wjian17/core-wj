@@ -42,6 +42,10 @@ public class Producer1 {
     public void send() throws Exception{
         String content = new Date().toString();
         rabbitTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_e","pikac111hu_#","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_ekkkk","","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
+        rabbitTemplate.convertAndSend("pikachu_ekkkk","pikachu_#","send content :"+content);
         rabbitTemplate.convertAndSend("pikachu_ekkkk","pikachu_#","send content :"+content);
         rabbitTemplate.convertAndSend("pikachu_e","pikachu11_#","send content :"+content);
 //        rabbitTemplate.convertAndSend("topic_change","topic_message","send content :"+content);
