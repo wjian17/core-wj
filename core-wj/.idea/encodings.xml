@@ -5,12 +5,9 @@
     <file url="file://$PROJECT_DIR$/springcloud-wj-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-business" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-common" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springcloud-wj-configClient" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springcloud-wj-configServer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-database" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-domain" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springcloud-wj-dubbo-admin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-dubbo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-dubbo-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-dubbo-provider" charset="UTF-8" />
@@ -20,7 +17,8 @@
     <file url="file://$PROJECT_DIR$/springcloud-wj-gof23" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-mq" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springcloud-wj-netty" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-wj-netty-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-wj-netty-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-quartz" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-redis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-wj-rest" charset="UTF-8" />

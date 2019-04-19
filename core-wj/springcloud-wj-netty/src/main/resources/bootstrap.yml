@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: springcloud-wj-netty
-  http:
-    encoding: { charset: UTF-8, enable: true, force: true }
-info:
-  component: springcloud-wj-netty

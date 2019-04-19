@@ -22,7 +22,7 @@
         <module name="springcloud-wj-gof23" />
         <module name="springcloud-wj-jpa" />
         <module name="springcloud-wj-mq" />
-        <module name="springcloud-wj-netty" />
+        <module name="springcloud-wj-netty-client" />
         <module name="springcloud-wj-quartz" />
         <module name="springcloud-wj-redis" />
         <module name="springcloud-wj-rest" />
@@ -58,7 +58,8 @@
       <module name="springcloud-wj-gof23" target="1.7" />
       <module name="springcloud-wj-jpa" target="1.8" />
       <module name="springcloud-wj-mq" target="1.8" />
-      <module name="springcloud-wj-netty" target="1.8" />
+      <module name="springcloud-wj-netty-client" target="1.8" />
+      <module name="springcloud-wj-netty-server" target="1.8" />
       <module name="springcloud-wj-quartz" target="1.7" />
       <module name="springcloud-wj-redis" target="1.8" />
       <module name="springcloud-wj-rest" target="1.8" />
