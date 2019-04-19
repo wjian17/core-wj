@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-domain/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-shirosso/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-mq/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-quartz/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

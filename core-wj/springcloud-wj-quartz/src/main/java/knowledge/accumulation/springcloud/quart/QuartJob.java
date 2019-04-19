@@ -8,7 +8,7 @@ import java.util.Date;
 public class QuartJob implements Job {
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        System.out.println(new Date());
+        System.out.println("任务执行输出时间："+jobExecutionContext.getJobDetail().getDescription()+new Date());
     }
 
     public static void main(String[] args) throws Exception {
@@ -21,7 +21,7 @@ public class QuartJob implements Job {
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
         scheduler.scheduleJob(jobDetail,trigger);
         scheduler.start();
-        Thread.sleep(1000000);
+        Thread.sleep(10000);
         scheduler.clear();
     }
 

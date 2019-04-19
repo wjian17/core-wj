@@ -30,7 +30,6 @@
         <module>springcloud-wj-ehcache</module>
         <module>springcloud-wj-jpa</module>
         <module>springcloud-wj-ssm</module>
-        <module>springcloud-wj-quartz</module>
         <module>springcloud-wj-rest</module>
         <module>springcloud-wj-easypoi</module>
         <module>springcloud-wj-wechat</module>
@@ -41,7 +40,6 @@
         <module>springcloud-wj-shiroserver</module>
         <module>springcloud-wj-shiroclient</module>
         <module>springcloud-wj-shirosso</module>
-        <module>springcloud-wj-dubbo-admin</module>
     </modules>
 
     <properties>
