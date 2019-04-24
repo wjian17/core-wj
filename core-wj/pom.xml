@@ -41,6 +41,8 @@
         <module>springcloud-wj-shiroserver</module>
         <module>springcloud-wj-shiroclient</module>
         <module>springcloud-wj-shirosso</module>
+        <module>springcloud-wj-hession</module>
+        <module>springcloud-wj-hession</module>
     </modules>
 
     <properties>

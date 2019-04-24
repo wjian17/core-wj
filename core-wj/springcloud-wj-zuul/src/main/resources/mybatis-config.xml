@@ -20,7 +20,7 @@
 
     <plugins>
         <!--&lt;!&ndash;数据库采用mysql  &ndash;&gt;-->
-        <!--helperDialect=mysql-->
+        <!--helperDialect=mapper-->
         <!--&lt;!&ndash; 和startPage中的pageNum效果一样&ndash;&gt;-->
         <!--offsetAsPageNum=true-->
         <!--&lt;!&ndash; 设置为true时，使用RowBounds分页会进行count查询 &ndash;&gt;-->

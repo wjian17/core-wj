@@ -16,6 +16,8 @@
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-ehcache/springcloud-wj-ehcache.iml" filepath="$PROJECT_DIR$/springcloud-wj-ehcache/springcloud-wj-ehcache.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-eureka/springcloud-wj-eureka.iml" filepath="$PROJECT_DIR$/springcloud-wj-eureka/springcloud-wj-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-gof23/springcloud-wj-gof23.iml" filepath="$PROJECT_DIR$/springcloud-wj-gof23/springcloud-wj-gof23.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession.iml" filepath="$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession-api/springcloud-wj-hession-api.iml" filepath="$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession-api/springcloud-wj-hession-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-jpa/springcloud-wj-jpa.iml" filepath="$PROJECT_DIR$/springcloud-wj-jpa/springcloud-wj-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-mq/springcloud-wj-mq.iml" filepath="$PROJECT_DIR$/springcloud-wj-mq/springcloud-wj-mq.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud-wj-netty-client/springcloud-wj-netty-client.iml" filepath="$PROJECT_DIR$/springcloud-wj-netty-client/springcloud-wj-netty-client.iml" />

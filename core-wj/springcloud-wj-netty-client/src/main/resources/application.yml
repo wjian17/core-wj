@@ -31,3 +31,6 @@ worker:
     count: 200
 netty:
   port: 11111
+  basePackage: knowledge.accumulation.springcloud.service
+  clientName: nettyClient
+  url: 127.0.0.1

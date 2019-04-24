@@ -1,24 +1,22 @@
 package knowledge.accumulation.springcloud.config;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * 读取yml配置文件中的信息
- * Created by wj on 2017/10/31 - 18:38
- * Concat wangjian@supplyfintech.com
+ * netty客户端配置
+ * <p>
+ *
+ * @author wangjian at wangjian@supplyfintech.com
+ * @date 2018/11/1-17:13
  */
 @Component
 @ConfigurationProperties(prefix = "netty")
+@Data
 public class NettyConfig {
 
+    private String url;
+
     private int port;
-
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
 }

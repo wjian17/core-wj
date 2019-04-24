@@ -1,50 +1,65 @@
-package knowledge.accumulation.springcloud.config;// 记录元方法信息的实体类
+package knowledge.accumulation.springcloud.config;
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import knowledge.accumulation.springcloud.config.initChannel.NettyClientHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.management.MBeanServer;
-
 /**
- * 客户端发送类
- * Created by wj on 2017/6/16-16:58
- * Concat wangjian@supplyfintech.com
+ * netty客户端第二个版本
+ * <p>
+ *
+ * @author wangjian at wangjian@supplyfintech.com
+ * @date 2018/11/1-17:08
  */
 public class NettyClient {
-
-    private Logger logger = LoggerFactory.getLogger(MBeanServer.class);
+    /**
+     * NettyClient 志控制器
+     * Create by wangjian at 2018/3/3 下午2:08
+     * Concat at wangjian@supplyfintech.com
+     */
+    private static final Logger LOGGER = LoggerFactory.getLogger(NettyClient.class);
+    private static int retry = 0;
+    /**
+     * 初始化Bootstrap实例， 此实例是netty客户端应用开发的入口
+     */
     private Bootstrap bootstrap;
+    /**
+     * 工人线程组
+     */
     private EventLoopGroup worker;
+    /**
+     * 远程端口
+     */
     private int port;
+    /**
+     * 远程服务器url
+     */
     private String url;
+    /**
+     * 默认重连机制为10次
+     */
     private int MAX_RETRY_TIMES = 10;
 
-    public NettyClient(String url, int port) {
-        this.url = url;
+    public NettyClient(int port, String url) {
         this.port = port;
+        this.url = url;
         bootstrap = new Bootstrap();
         worker = new NioEventLoopGroup();
         bootstrap.group(worker);
         bootstrap.channel(NioSocketChannel.class);
     }
 
-    public void close() {
-        logger.info("关闭资源");
-        worker.shutdownGracefully();
-    }
-
-    public Object remoteCall(final MethodInvokeMeta cmd, int retry) {
+    public void start() {
+        LOGGER.info("{} -> [启动连接] {}:{}", this.getClass().getName(), url, port);
+        bootstrap.handler(new NettyClientHandler());
+        ChannelFuture f = bootstrap.connect(url, port);
         try {
-            CustomChannelInitializerClient customChannelInitializer = new CustomChannelInitializerClient(cmd);
-            bootstrap.handler(customChannelInitializer);
-            ChannelFuture sync = bootstrap.connect(url, port).sync();
-            sync.channel().closeFuture().sync();
-            Object response = customChannelInitializer.getResponse();
-            return response;
+            f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             retry++;
             if (retry > MAX_RETRY_TIMES) {
@@ -55,8 +70,8 @@ public class NettyClient {
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
                 }
-                logger.info("第{}次尝试....失败", retry);
-                return remoteCall(cmd, retry);
+                LOGGER.info("第{}次尝试....失败", retry);
+                start();
             }
         }
     }
