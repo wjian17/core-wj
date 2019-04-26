@@ -41,10 +41,11 @@ spring:
         concurrency: 1
         # 最大数
         max-concurrency: 1
-        # 是否支持重试
+        # 是否支持重试 - 需配置在消费端，重试是在消费端-条件：抛出异常
         retry:
           enabled: true
-          max-attempts: 5
+          maxAttempts: 5
+          initialInterval: 5000ms
   activemq:
     broker-url: tcp://localhost:61616
     in-memory: true
