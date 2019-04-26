@@ -16,6 +16,9 @@
         <option value="$PROJECT_DIR$/springcloud-wj-dubbo-impl/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-wj-dubbo-api/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-wj-quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession-service/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession-client/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-wj-hession/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -175,13 +175,13 @@ public class SolrController {
         QueryResponse response = null;
 
         try {
-            response = client.query("collection1",params);
+            response = client.query("new_core",params);
             SolrTemplate solrTemplate=null;
 //            InsuranceContract insuranceContract = new InsuranceContract();
 //            solrTemplate.saveBean("",insuranceContract);
 //            client.add("",insuranceContract);
             Query query = new SimpleQuery("*:*");
-            solrTemplate.queryForPage("",query, InsuranceContract.class);
+            solrTemplate.queryForPage("new_core",query, InsuranceContract.class);
             SolrDocumentList results = response.getResults();
             for (SolrDocument document : results) {
                 System.out.println(document.getFieldValue("policy_no"));

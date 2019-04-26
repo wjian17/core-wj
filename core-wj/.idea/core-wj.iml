@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-netty-client/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-netty-client/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-easypoi/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/springcloud-wj-netty-server/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

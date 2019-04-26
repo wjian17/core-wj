@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManager;
 import javax.sql.DataSource;
-import java.util.Properties;
 
 /**
  * Created by Administrator on 2017/8/11.
@@ -26,7 +25,7 @@ import java.util.Properties;
 @EnableJpaRepositories(
         entityManagerFactoryRef="entityManagerFactoryPrimary",
         transactionManagerRef="transactionManagerPrimary",
-        basePackages= {"knowledge.accumulation.springcloud.hystrix.domain"}) //设置Repository所在位置
+        basePackages= {"knowledge.accumulation.springcloud.dao"}) //设置Repository所在位置
 public class PrimaryConfig {
  
     @Autowired
@@ -43,24 +42,24 @@ public class PrimaryConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryPrimary (EntityManagerFactoryBuilder builder) {
         LocalContainerEntityManagerFactoryBean entityManagerFactory = builder
                 .dataSource(dataSource)
-                .packages("knowledge.accumulation.springcloud.module.jpa.pojo") //设置实体类所在位置
+                .packages("knowledge.accumulation.springcloud.domain") //设置实体类所在位置
                 .persistenceUnit("primaryPersistenceUnit")
                 .build();
-        entityManagerFactory.setJpaProperties(getVendorProperties());
+//        entityManagerFactory.setJpaProperties(getVendorProperties());
         return entityManagerFactory;
 
     }
 //    @Autowired
 //    private JpaProperties jpaProperties;
-    private Properties getVendorProperties() {
-//        return jpaProperties.set(dataSource);
-        Properties jpaProperties = new Properties();
-        jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        jpaProperties.put("hibernate.physical_naming_strategy", "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy");
-        jpaProperties.put("hibernate.connection.charSet", "utf-8");
-        jpaProperties.put("hibernate.show_sql", "true");
-        return jpaProperties;
-    }
+//    private Properties getVendorProperties() {
+////        return jpaProperties.set(dataSource);
+//        Properties jpaProperties = new Properties();
+//        jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+//        jpaProperties.put("hibernate.physical_naming_strategy", "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy");
+//        jpaProperties.put("hibernate.connection.charSet", "utf-8");
+//        jpaProperties.put("hibernate.show_sql", "true");
+//        return jpaProperties;
+//    }
     @Primary
     @Bean(name = "transactionManagerPrimary")
     public PlatformTransactionManager transactionManagerPrimary(EntityManagerFactoryBuilder builder) {

@@ -3,7 +3,7 @@
 
 	<!--<include resource="org/springframework/boot/logging/logback/base.mapper.mapper.mapper" />-->
 
-	<contextName>biometrics-aibee-face</contextName>
+	<contextName>springcloud-wj-jpa</contextName>
 	<property name="LOG_HOME" value="${LOG_HOME:-/biometrics-data/logs/springcloud-wj-jpa}" />
 
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
