@@ -155,4 +155,46 @@ public class RabbitMqReceiver {
 //        }
 //    }
 
+    /**
+     * 死信队列和无路由队列
+     *     @RabbitHandler
+     *     @RabbitListener(bindings = @QueueBinding(
+     *             value = @Queue(value = "invoice_message", arguments = {@Argument(name = "x-dead-letter-exchange", value = "exchange-dlx")}),
+     *             key = "invoice_message",
+     *             exchange = @Exchange(value = "invoice_exchange", arguments = {@Argument(name = "alternate-exchange", value = "exchange-unroute")})
+     *     ))
+     *
+     *     @RabbitHandler
+     *     @RabbitListener(bindings = @QueueBinding(
+     *             value = @Queue(value = "queue_unroute"),
+     *             exchange = @Exchange(value = "exchange-unroute", type = "fanout")
+     *     ))
+     *
+     *         @RabbitHandler
+     *     @RabbitListener(bindings = @QueueBinding(
+     *             value = @Queue(value = "queue_dlx"),
+     *             exchange = @Exchange(value = "exchange-dlx", type = "fanout")
+     *     ))
+     */
+//    @RabbitHandler
+//    @RabbitListener(bindings = @QueueBinding(
+//            value = @Queue(value = "queue_unroute"),
+//            exchange = @Exchange(value = "exchange-unroute", type = "fanout")
+//    ))
+//    public void unroute(String content, Channel channel, Message me) throws Exception {
+//        System.out.println("unroute...");
+//        System.out.println("unroute...");
+//        System.out.println("unroute...");
+//    }
+//
+//    @RabbitHandler
+//    @RabbitListener(bindings = @QueueBinding(
+//            value = @Queue(value = "queue_dlx"),
+//            exchange = @Exchange(value = "exchange-dlx", type = "fanout")
+//    ))
+//    public void deadQueue(String content, Channel channel, Message me) throws Exception {
+//        System.out.println("dlx......");
+//        System.out.println("dlx......");
+//        System.out.println("dlx......");
+//    }
 }

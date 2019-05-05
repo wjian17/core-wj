@@ -39,7 +39,7 @@ class SingletonDomain2 {
     /**
      * 内部类只有在调用时候才会加载 间接实现懒加载
      */
-    public static class SingletonItem{
+    private static class SingletonItem{
         private static SingletonDomain2 singletonDomain2= new SingletonDomain2();
     }
 

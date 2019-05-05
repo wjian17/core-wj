@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>camera</title>
+</head>
+<script type="text/javascript">
+    window.onload = function () {
+        var takePicture = document.getElementById('takepicture');
+        takePicture.click();
+        // 监听照片拍摄,并获取照片流
+        var takePictureUrl = function () {
+            var takePicture = document.getElementById('takepicture');
+            takePicture.onchange = function (event) {
+                var files = event.target.files, file;
+                if (files && files.length > 0) {
+                    file = files[0];
+                    try {
+                        var URL = window.URL || window.webkitURL;
+                        var blob = URL.createObjectURL(file);　　// 获取照片的文件流
+                        compressPicture(blob);　　// 压缩照片
+                    }
+                    catch (e) {
+                        try {
+                            var fileReader = new FileReader();
+                            fileReader.onload = function (event) {　　　　// 获取照片的base64编码
+                                compressPicture(event.target.result);　　// 压缩照片
+                            };
+                            fileReader.readAsDataURL(file);
+                        }
+                        catch (e) {
+                            alert(common.MESSAGE.title.error, '拍照失败,请联系客服或尝试更换手机再试!');
+                        }
+                    }
+                }
+            }
+        }();
+    }
+</script>
+<body>
+<input id="takepicture" type="file" accept="image/*" capture="camera" style="display: none"/>
+
+</body>
+</html>

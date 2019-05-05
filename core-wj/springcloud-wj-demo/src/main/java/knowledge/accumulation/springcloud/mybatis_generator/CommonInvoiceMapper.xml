@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="knowledge.accumulation.springcloud.mybatis_generator.CommonInvoiceMapper" >
+  <resultMap id="BaseResultMap" type="knowledge.accumulation.springcloud.mybatis_generator.CommonInvoice" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="contract_id" property="contractId" jdbcType="INTEGER" />
+    <result column="policy_no" property="policyNo" jdbcType="VARCHAR" />
+    <result column="invoice_title" property="invoiceTitle" jdbcType="VARCHAR" />
+    <result column="invoice_tax_no" property="invoiceTaxNo" jdbcType="VARCHAR" />
+    <result column="invoice_phone" property="invoicePhone" jdbcType="VARCHAR" />
+    <result column="invoice_email" property="invoiceEmail" jdbcType="VARCHAR" />
+    <result column="invoice_url" property="invoiceUrl" jdbcType="VARCHAR" />
+    <result column="invoice_type" property="invoiceType" jdbcType="BIT" />
+    <result column="invoice_format" property="invoiceFormat" jdbcType="BIT" />
+    <result column="invoice_status" property="invoiceStatus" jdbcType="BIT" />
+    <result column="mail_status" property="mailStatus" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, contract_id, policy_no, invoice_title, invoice_tax_no, invoice_phone, invoice_email, 
+    invoice_url, invoice_type, invoice_format, invoice_status, mail_status, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from common_invoice
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from common_invoice
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="knowledge.accumulation.springcloud.mybatis_generator.CommonInvoice" >
+    insert into common_invoice (id, contract_id, policy_no, 
+      invoice_title, invoice_tax_no, invoice_phone, 
+      invoice_email, invoice_url, invoice_type, 
+      invoice_format, invoice_status, mail_status, 
+      create_time, update_time)
+    values (#{id,jdbcType=INTEGER}, #{contractId,jdbcType=INTEGER}, #{policyNo,jdbcType=VARCHAR}, 
+      #{invoiceTitle,jdbcType=VARCHAR}, #{invoiceTaxNo,jdbcType=VARCHAR}, #{invoicePhone,jdbcType=VARCHAR}, 
+      #{invoiceEmail,jdbcType=VARCHAR}, #{invoiceUrl,jdbcType=VARCHAR}, #{invoiceType,jdbcType=BIT}, 
+      #{invoiceFormat,jdbcType=BIT}, #{invoiceStatus,jdbcType=BIT}, #{mailStatus,jdbcType=BIT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="knowledge.accumulation.springcloud.mybatis_generator.CommonInvoice" >
+    insert into common_invoice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="contractId != null" >
+        contract_id,
+      </if>
+      <if test="policyNo != null" >
+        policy_no,
+      </if>
+      <if test="invoiceTitle != null" >
+        invoice_title,
+      </if>
+      <if test="invoiceTaxNo != null" >
+        invoice_tax_no,
+      </if>
+      <if test="invoicePhone != null" >
+        invoice_phone,
+      </if>
+      <if test="invoiceEmail != null" >
+        invoice_email,
+      </if>
+      <if test="invoiceUrl != null" >
+        invoice_url,
+      </if>
+      <if test="invoiceType != null" >
+        invoice_type,
+      </if>
+      <if test="invoiceFormat != null" >
+        invoice_format,
+      </if>
+      <if test="invoiceStatus != null" >
+        invoice_status,
+      </if>
+      <if test="mailStatus != null" >
+        mail_status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contractId != null" >
+        #{contractId,jdbcType=INTEGER},
+      </if>
+      <if test="policyNo != null" >
+        #{policyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null" >
+        #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTaxNo != null" >
+        #{invoiceTaxNo,jdbcType=VARCHAR},
+      </if>
+      <if test="invoicePhone != null" >
+        #{invoicePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceEmail != null" >
+        #{invoiceEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceUrl != null" >
+        #{invoiceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceType != null" >
+        #{invoiceType,jdbcType=BIT},
+      </if>
+      <if test="invoiceFormat != null" >
+        #{invoiceFormat,jdbcType=BIT},
+      </if>
+      <if test="invoiceStatus != null" >
+        #{invoiceStatus,jdbcType=BIT},
+      </if>
+      <if test="mailStatus != null" >
+        #{mailStatus,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="knowledge.accumulation.springcloud.mybatis_generator.CommonInvoice" >
+    update common_invoice
+    <set >
+      <if test="contractId != null" >
+        contract_id = #{contractId,jdbcType=INTEGER},
+      </if>
+      <if test="policyNo != null" >
+        policy_no = #{policyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null" >
+        invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTaxNo != null" >
+        invoice_tax_no = #{invoiceTaxNo,jdbcType=VARCHAR},
+      </if>
+      <if test="invoicePhone != null" >
+        invoice_phone = #{invoicePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceEmail != null" >
+        invoice_email = #{invoiceEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceUrl != null" >
+        invoice_url = #{invoiceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceType != null" >
+        invoice_type = #{invoiceType,jdbcType=BIT},
+      </if>
+      <if test="invoiceFormat != null" >
+        invoice_format = #{invoiceFormat,jdbcType=BIT},
+      </if>
+      <if test="invoiceStatus != null" >
+        invoice_status = #{invoiceStatus,jdbcType=BIT},
+      </if>
+      <if test="mailStatus != null" >
+        mail_status = #{mailStatus,jdbcType=BIT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="knowledge.accumulation.springcloud.mybatis_generator.CommonInvoice" >
+    update common_invoice
+    set contract_id = #{contractId,jdbcType=INTEGER},
+      policy_no = #{policyNo,jdbcType=VARCHAR},
+      invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      invoice_tax_no = #{invoiceTaxNo,jdbcType=VARCHAR},
+      invoice_phone = #{invoicePhone,jdbcType=VARCHAR},
+      invoice_email = #{invoiceEmail,jdbcType=VARCHAR},
+      invoice_url = #{invoiceUrl,jdbcType=VARCHAR},
+      invoice_type = #{invoiceType,jdbcType=BIT},
+      invoice_format = #{invoiceFormat,jdbcType=BIT},
+      invoice_status = #{invoiceStatus,jdbcType=BIT},
+      mail_status = #{mailStatus,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
