@@ -20,7 +20,7 @@ public class LoginController {
     @RequestMapping("loginInit.do")
     public String loginInit(HttpServletRequest request, HttpServletResponse response)  {
         //回调地址,要跟下面的地址能调通(getWechatGZAccessToken.do)
-        String backUrl="http://27034.3m.dkys.org/getWechatGZAccessToken.do";
+        String backUrl="http://fhtpbv.natappfree.cc/getWechatGZAccessToken.do";
         /**
          *这儿一定要注意！！首尾不能有多的空格（因为直接复制往往会多出空格），其次就是参数的顺序不能变动
          **/
@@ -39,7 +39,7 @@ public class LoginController {
     }
 
     @RequestMapping("getWechatGZAccessToken.do")
-    public String getWechatGZAccessToken(HttpServletRequest request,HttpServletResponse response) throws Exception{
+    public void getWechatGZAccessToken(HttpServletRequest request,HttpServletResponse response) throws Exception{
         //微信公众号的APPID和APPSECRET
         String code=request.getParameter("code");
         String url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + APPID+
@@ -57,7 +57,25 @@ public class LoginController {
                 "&lang=zh_CN";
         String infoResult = HttpClientManager.getUrlData(infoUrl);
         Map<String,Object> infoData = JSON.parseObject(infoResult,Map.class);
-        return "1.html";
+        System.out.println(infoData);
+        response.setHeader("Content-type", "text/html;charset=UTF-8");
+        //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().println("<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>Title</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<font size=\"20\" color=\"red\">"+
+                        infoData.get("nickname").toString().getBytes("UTF-8")+
+                        infoData.get("nickname").toString()+
+                        infoData.get("nickname").toString()+
+                        infoData.get("nickname").toString()+
+                "</font>"+
+                "</body>\n" +
+                "</html>");
     }
 
 }

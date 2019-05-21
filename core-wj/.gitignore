@@ -5,6 +5,7 @@ log/
 .DS_Store
 release.properties
 *.releaseBackup
+*.log
 
 ### STS ###
 .apt_generated
@@ -19,6 +20,7 @@ release.properties
 *.iws
 *.iml
 *.ipr
+*.log
 
 ### NetBeans ###
 nbproject/private/

@@ -28,13 +28,13 @@ public class UserLoginController {
     @ResponseBody
     @RequiresPermissions("/role/remove")
 //    @RequiresRoles("role1")
-    public ResponseBean toLogin(){
+    public ResponseBean toLogin() {
         ResponseBean responseBean = new ResponseBean();
-        try{
+        try {
             SecurityUtils.getSubject().getPrincipals();
             Object o = CacheManager.getCacheManager("").getCache(SecurityUtils.getSubject().getPrincipals().toString());
-        }catch (Exception e){
-            logger.error("test logger error:{}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("test logger error:{}", e.getMessage());
             e.printStackTrace();
         }
         return responseBean;
@@ -42,55 +42,60 @@ public class UserLoginController {
 
     @RequestMapping(value = "/loginUrl")
     @ResponseBody
-    public ResponseBean loginUrl(){
+    public ResponseBean loginUrl() {
         ResponseBean responseBean = new ResponseBean();
-        try{
-           responseBean.setResponseCode("0000");
-           responseBean.setResponseMsg("用户未登录");
-        }catch (Exception e){
-            logger.error("test logger error:{}",e.getMessage());
+        try {
+            int i = 1/0;
+            responseBean.setResponseCode("0000");
+            responseBean.setResponseMsg("用户未登录");
+        } catch (ArithmeticException e) {
+            logger.error("test logger error:{}", e.getMessage());
             e.printStackTrace();
+            throw e;
         }
         return responseBean;
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseBean login(HttpServletRequest request){
+    public ResponseBean login(HttpServletRequest request) throws ArithmeticException{
         ResponseBean responseBean = new ResponseBean();
-        try{
-            String username = request.getParameter("username").trim();
-            String password = request.getParameter("password").trim();
-            String remember = request.getParameter("remember");
-            Subject currentUser = SecurityUtils.getSubject();
-            UsernamePasswordToken token = new UsernamePasswordToken(username, password.toCharArray());//
-            AuthenticationToken token2 = new JWTToken(request.getHeader("Authorization"));//
-            //如果开启了记住我功能
-            if ("on".equals(remember)) {
-                token.setRememberMe(true);
-            } else {
-                token.setRememberMe(false);
-            }
-            //执行shiro登录操作
+
+        String username = request.getParameter("username").trim();
+        String password = request.getParameter("password").trim();
+        String remember = request.getParameter("remember");
+        Subject currentUser = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password.toCharArray());//
+        AuthenticationToken token2 = new JWTToken(request.getHeader("Authorization"));//
+        try {
+
+            int i = 1/0;
+        }catch (ArithmeticException e){
+            throw e;
+        }
+        //如果开启了记住我功能
+        if ("on".equals(remember)) {
+            token.setRememberMe(true);
+        } else {
+            token.setRememberMe(false);
+        }
+        //执行shiro登录操作
 //            currentUser.login(token);
-            JWTUtil.sign("admin","3dd80d9a1d3f54c28938feda6b2e3f91");
-            currentUser.login(token2);
-        }catch (Exception e){
-            logger.error("test logger error:{}",e.getMessage());
-            e.printStackTrace();
-        }
+        String sign = JWTUtil.sign("admin", "3dd80d9a1d3f54c28938feda6b2e3f91");
+        currentUser.login(token2);
         return responseBean;
     }
 
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseBean index(){
+    public ResponseBean index() {
         ResponseBean responseBean = new ResponseBean();
-        try{
+        try {
             System.out.println(SecurityUtils.getSubject().getPrincipal());
             System.out.println("index");
-        }catch (Exception e){
-            logger.error("test logger error:{}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("test logger error:{}", e.getMessage());
             e.printStackTrace();
         }
         return responseBean;
@@ -98,12 +103,12 @@ public class UserLoginController {
 
     @RequestMapping(value = "/unauth")
     @ResponseBody
-    public ResponseBean unauth(){
+    public ResponseBean unauth() {
         ResponseBean responseBean = new ResponseBean();
-        try{
+        try {
             System.out.println("unauth");
-        }catch (Exception e){
-            logger.error("test logger error:{}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("test logger error:{}", e.getMessage());
             e.printStackTrace();
         }
         return responseBean;
@@ -111,54 +116,56 @@ public class UserLoginController {
 
     @RequestMapping(value = "/error")
     @ResponseBody
-    public ResponseBean error(){
+    public ResponseBean error() {
         ResponseBean responseBean = new ResponseBean();
-        try{
+        try {
             System.out.println("11111111111");
-        }catch (Exception e){
-            logger.error("test logger error:{}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("test logger error:{}", e.getMessage());
             e.printStackTrace();
         }
         return responseBean;
     }
+
     @RequestMapping(value = "/success")
     @ResponseBody
-    public ResponseBean success(){
+    public ResponseBean success() {
         ResponseBean responseBean = new ResponseBean();
-        try{
+        try {
             System.out.println("success");
-        }catch (Exception e){
-            logger.error("test logger success:{}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("test logger success:{}", e.getMessage());
             e.printStackTrace();
         }
         return responseBean;
     }
+
     @RequestMapping(value = "/testAopHandler")
     @ResponseBody
-    public ResponseBean testAopHandler(){
+    public ResponseBean testAopHandler() {
         ResponseBean responseBean = new ResponseBean();
-        try{
+        try {
             System.out.println("testAopHandler");
 
-        }catch (Exception e){
-            logger.error("test logger testAopHandler:{}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("test logger testAopHandler:{}", e.getMessage());
             e.printStackTrace();
         }
-        int i = 1/0;
+        int i = 1 / 0;
         return responseBean;
     }
 
     @RequestMapping(value = "/logout")
     @ResponseBody
-    public ResponseBean logout(){
+    public ResponseBean logout() {
         ResponseBean responseBean = new ResponseBean();
-        try{
+        try {
             Subject subject = SecurityUtils.getSubject();
-            if(subject!=null){
+            if (subject != null) {
                 subject.logout();
             }
-        }catch (Exception e){
-            logger.error("test logger error:{}",e.getMessage());
+        } catch (Exception e) {
+            logger.error("test logger error:{}", e.getMessage());
             e.printStackTrace();
         }
         return responseBean;

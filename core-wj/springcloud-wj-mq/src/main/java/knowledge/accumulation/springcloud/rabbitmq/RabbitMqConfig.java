@@ -26,12 +26,25 @@ public class RabbitMqConfig implements RabbitTemplate.ConfirmCallback,RabbitTemp
     }
 
 
-
+    /**
+     * 启动消息失败返回，比如路由不到队列时触发回调
+     * @param message
+     * @param i
+     * @param s
+     * @param s1
+     * @param s2
+     */
     @Override
     public void returnedMessage(Message message, int i, String s, String s1, String s2) {
         System.out.println("消息从交换机到队列失败" + message.toString()+"==="+i+"==="+s1+"==="+s2);
     }
 
+    /**
+     * 确认是否正确到达exchange中
+     * @param correlationData
+     * @param ack
+     * @param cause
+     */
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
         if (!ack) {

@@ -42,7 +42,7 @@ public class ShiroConfig {
         JWTFilter jwtFilter = new JWTFilter();
         filters.put("logout",logoutFilter);
 //        filters.put("authc",formAuthenticationFilter);
-        filters.put("jwt",jwtFilter);
+//        filters.put("jwt",jwtFilter);
         shiroFilterFactoryBean.setFilters(filters);
         filterChainDefinitionMap.put("/webjars/**", "anon");
         filterChainDefinitionMap.put("/web/**", "authc");
@@ -54,7 +54,8 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/userLogin/testAopHandler", "anon");
         filterChainDefinitionMap.put("/userLogin/error", "anon");
         filterChainDefinitionMap.put("/userLogin/index", "user");
-        filterChainDefinitionMap.put("/jwt/**", "jwt");
+        filterChainDefinitionMap.put("/TestController/**", "anon");
+//        filterChainDefinitionMap.put("/jwt/**", "jwt");
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/userLogin/logout", "logout");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);

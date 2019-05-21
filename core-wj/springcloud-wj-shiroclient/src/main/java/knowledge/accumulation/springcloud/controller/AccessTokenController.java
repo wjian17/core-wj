@@ -1,13 +1,16 @@
 package knowledge.accumulation.springcloud.controller;
 
+import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class AccessTokenController {
 
-//    @RequestMapping("/oauth2-login")
-//    public Object toLogin(HttpServletRequest request)throws OAuthProblemException {
+    @RequestMapping("/oauth2-login")
+    public Object toLogin(HttpServletRequest request)throws OAuthProblemException {
 //        String  code = request.getParameter("code");
 //        System.out.println("==> 服务端回调，获取的code："+code);
 //        OAuthClient oAuthClient =new OAuthClient(new URLConnectionClient());
@@ -37,8 +40,8 @@ public class AccessTokenController {
 //        } catch (OAuthSystemException e) {
 //            e.printStackTrace();
 //        }
-//        return null;
-//    }
+        return null;
+    }
 //
 //    @RequestMapping("/getUserInfo")
 //    @ResponseBody

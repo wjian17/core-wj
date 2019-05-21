@@ -82,4 +82,9 @@ public class MyBatisSessionFactoryConfig implements TransactionManagementConfigu
 		logger.info("数据库事务开启");
 		return new DataSourceTransactionManager(dataSource);
 	}
+
+	@Bean
+	public PlatformTransactionManager bfscrmTransactionManager(@Qualifier("logDataSource")DataSource sitDataSource) {
+		return new DataSourceTransactionManager(sitDataSource);
+	}
 }

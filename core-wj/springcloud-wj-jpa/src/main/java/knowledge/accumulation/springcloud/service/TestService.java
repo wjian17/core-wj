@@ -27,6 +27,7 @@ public class TestService {
     public void test() throws Exception{
         try {
             List<SolrTbEntity> lists = solrTbDao.findAll();
+
             InsurancePlanCriticalIllness insurancePlanCriticalIllness = new InsurancePlanCriticalIllness();
             insurancePlanCriticalIllness.setPlanNo("00000");
             Object o = insurancePlanCriticalIllnessDao.save(insurancePlanCriticalIllness);
