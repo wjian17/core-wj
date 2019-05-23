@@ -1,7 +1,14 @@
 info:
   component: springcloud-wj-rest
 
-
+spring:
+  application:
+    name: springcloud-wj-rest
+  cloud:
+    config:
+      uri: http://localhost:8881
+      profile: dev
+      label: master
 # 参考链接 https://blog.csdn.net/chengkui1990/article/details/80908405
 # 相关配置
 eureka:

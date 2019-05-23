@@ -1,0 +1,47 @@
+# 服务端口号
+server:
+  port: 8881
+
+#开启所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
+#数据库配置
+spring:
+  application:
+    name: springcloud-wj-config
+  cloud:
+    config:
+      profile: dev
+      server:
+        git:
+          uri: https://github.com/wjian17/yml-config
+          search-paths: dev  #git中文件夹
+          username: wjian17
+          PASSWORD: 19920829qq.com
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+  aop:
+    proxy-target-class: true
+    auto: true
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 47.95.224.207
+    port: 5672
+    username: guest
+    password: guest
+
+# Log 配置 级别大写 TRACE|DEBUG|INFO|WARN|ERROR
+logging:
+  level:
+    #root: INFO
+    com.grgbanking.biometrics: DEBUG
+  path: springcloud-wj-database
+  config: classpath:logback.xml
+
+
+name: test111111

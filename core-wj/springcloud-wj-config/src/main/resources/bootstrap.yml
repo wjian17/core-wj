@@ -1,13 +1,6 @@
 info:
-  component: springcloud-wj-zuul
+  component: springcloud-wj-config
 
-
-#开启所有端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 
 # 参考链接 https://blog.csdn.net/chengkui1990/article/details/80908405
 # 相关配置
