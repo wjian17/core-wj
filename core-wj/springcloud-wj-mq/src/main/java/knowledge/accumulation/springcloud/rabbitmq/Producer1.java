@@ -41,16 +41,20 @@ public class Producer1 {
     @Scheduled(fixedDelay=20000)//每3s执行1次
     public void send() throws Exception{
         String content = new Date().toString();
-        rabbitTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
-        rabbitTemplate.convertAndSend("pikachu_e","pikac111hu_#","send content :"+content);
-        rabbitTemplate.convertAndSend("pikachu_ekkkk","","send content :"+content);
-        rabbitTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
-        rabbitTemplate.convertAndSend("pikachu_ekkkk","pikachu_#","send content :"+content);
-        rabbitTemplate.convertAndSend("pikachu_ekkkk","pikachu_#","send content :"+content);
-        rabbitTemplate.convertAndSend("pikachu_e","pikachu11_#","send content :"+content);
-//        rabbitTemplate.convertAndSend("topic_change","topic_message","send content :"+content);
-//        rabbitTemplate.convertAndSend("topic_change","topic_#","send content :"+content);
         rabbitTemplate.convertAndSend("publish_message","publish_message","send content :"+content);
+        Thread.sleep(5000);
+        rabbitTemplate.convertAndSend("publish_message","publish_message2","send content :"+content);
+        Thread.sleep(5000);
+        rabbitTemplate.convertAndSend("publish_message1","publish_message2","send content :"+content);
+//        rabbitTemplate.convertAndSend("pikachu_e","pikac111hu_#","send content :"+content);
+//        rabbitTemplate.convertAndSend("pikachu_ekkkk","","send content :"+content);
+//        rabbitTemplate.convertAndSend("pikachu_e","pikachu_#","send content :"+content);
+//        rabbitTemplate.convertAndSend("pikachu_ekkkk","pikachu_#","send content :"+content);
+//        rabbitTemplate.convertAndSend("pikachu_ekkkk","pikachu_#","send content :"+content);
+//        rabbitTemplate.convertAndSend("pikachu_e","pikachu11_#","send content :"+content);
+////        rabbitTemplate.convertAndSend("topic_change","topic_message","send content :"+content);
+////        rabbitTemplate.convertAndSend("topic_change","topic_#","send content :"+content);
+//        rabbitTemplate.convertAndSend("publish_message","publish_message","send content :"+content);
 ////        this.amqpTemplate .convertAndSend("tp.exchage","topic.massages","topicmessages");
 //        rabbitTemplate.convertAndSend("publish_message","publish_message", "send content :"+content,
 //                message -> {

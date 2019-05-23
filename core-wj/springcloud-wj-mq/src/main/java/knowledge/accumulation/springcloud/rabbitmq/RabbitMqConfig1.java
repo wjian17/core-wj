@@ -41,11 +41,11 @@ public class RabbitMqConfig1 {
         //        消息确认  yml 需要配置   publisher-returns: true
         rabbitTemplate.setConfirmCallback((correlationData, ack, cause) -> {
             if (ack) {
-                System.out.println("消息发送到exchange成功,id: "+correlationData.getId());
-                log.debug("消息发送到exchange成功,id: {}", correlationData.getId());
+                System.out.println("消费者ack回调,id: "+correlationData.getId());
+                log.debug("消费者ack回调,id: {}", correlationData.getId());
             } else {
-                System.out.println("消息发送到exchange失败,原因: "+correlationData.getId());
-                log.debug("消息发送到exchange失败,原因: {}", cause);
+                System.out.println("消费者ack回调,原因: "+correlationData.getId());
+                log.debug("消费者ack回调,原因: {}", cause);
             }
         });
         return rabbitTemplate;

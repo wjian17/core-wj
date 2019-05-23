@@ -26,8 +26,14 @@ public class RabbitMqConfig implements RabbitTemplate.ConfirmCallback,RabbitTemp
     }
 
 
+
     /**
-     * 启动消息失败返回，比如路由不到队列时触发回调
+     * 如果消息没有到exchange,则confirm回调,ack=false
+     * 如果消息到达exchange,则confirm回调,ack=true
+     * exchange到queue成功,则不回调return
+     * exchange到queue失败,则回调return(需设置mandatory=true,否则不回回调,消息就丢了)
+     *
+     *
      * @param message
      * @param i
      * @param s
@@ -40,7 +46,7 @@ public class RabbitMqConfig implements RabbitTemplate.ConfirmCallback,RabbitTemp
     }
 
     /**
-     * 确认是否正确到达exchange中
+     * 确认是否正确到达交换机
      * @param correlationData
      * @param ack
      * @param cause
@@ -48,9 +54,9 @@ public class RabbitMqConfig implements RabbitTemplate.ConfirmCallback,RabbitTemp
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
         if (!ack) {
-            System.out.println("HelloSender消息发送失败" + cause);
+            System.out.println("消息发送到exchange失败" + cause);
         } else {
-            System.out.println("HelloSender 消息发送成功 "+ cause );
+            System.out.println("消息发送到exchange成功 "+ cause );
             if(correlationData!=null){
                 System.out.println(correlationData.getId());
             }
