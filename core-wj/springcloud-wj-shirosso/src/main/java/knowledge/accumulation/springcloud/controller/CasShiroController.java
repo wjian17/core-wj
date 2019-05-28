@@ -1,6 +1,5 @@
 package knowledge.accumulation.springcloud.controller;
 
-import knowledge.accumulation.springcloud.module.shiro.pojo.User;
 import org.apache.shiro.crypto.hash.ConfigurableHashService;
 import org.apache.shiro.crypto.hash.DefaultHashService;
 import org.apache.shiro.crypto.hash.HashRequest;

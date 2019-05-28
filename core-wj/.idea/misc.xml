@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/springcloud-wj-dubbo-admin" />
-    <type id="Spring" />
-  </component>
-  <component name="JavaScriptSettings">
-    <option name="languageLevel" value="ES6" />
-  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/springcloud-wj-common/pom.xml" />
-        <option value="$PROJECT_DIR$/springcloud-wj-dubbo/pom.xml" />
-        <option value="$PROJECT_DIR$/springcloud-wj-dubbo-impl/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-wj-dubbo-api/pom.xml" />
-        <option value="$PROJECT_DIR$/springcloud-wj-quartz/pom.xml" />
-        <option value="$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession-service/pom.xml" />
-        <option value="$PROJECT_DIR$/springcloud-wj-hession/springcloud-wj-hession-client/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-wj-common/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-wj-hession/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-wj-quartz/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-wj-rest/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/springcloud-wj-configClient/pom.xml" />
-        <option value="$PROJECT_DIR$/springcloud-wj-dubbo-admin/pom.xml" />
-      </set>
-    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_10" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
 </project>

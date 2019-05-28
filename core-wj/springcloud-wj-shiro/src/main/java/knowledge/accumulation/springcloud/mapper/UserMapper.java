@@ -1,8 +1,7 @@
 package knowledge.accumulation.springcloud.mapper;
 
-import cn.stylefeng.roses.core.datascope.DataScope;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import knowledge.accumulation.springcloud.module.shiro.pojo.User;
+import com.github.pagehelper.Page;
+import knowledge.accumulation.springcloud.module.shiro.pojo.SysUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Map;
@@ -30,7 +29,7 @@ public interface UserMapper extends BaseMapper {
     /**
      * 根据条件查询用户列表
      */
-    Page<Map<String, Object>> selectUsers(@Param("page") Page page, @Param("dataScope") DataScope dataScope, @Param("name") String name, @Param("beginTime") String beginTime, @Param("endTime") String endTime, @Param("deptId") Long deptId);
+    Page<Map<String, Object>> selectUsers(@Param("page") Page page, @Param("name") String name, @Param("beginTime") String beginTime, @Param("endTime") String endTime, @Param("deptId") Long deptId);
 
     /**
      * 设置用户的角色
@@ -40,6 +39,6 @@ public interface UserMapper extends BaseMapper {
     /**
      * 通过账号获取用户
      */
-    User getByAccount(@Param("account") String account);
+    SysUser getByAccount(@Param("account") String account);
 
 }

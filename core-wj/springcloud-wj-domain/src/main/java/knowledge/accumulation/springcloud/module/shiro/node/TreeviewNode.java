@@ -15,8 +15,8 @@
  */
 package knowledge.accumulation.springcloud.module.shiro.node;
 
-import cn.stylefeng.roses.kernel.model.tree.Tree;
 import lombok.Data;
+import sun.reflect.generics.tree.Tree;
 
 import java.util.List;
 
@@ -49,18 +49,4 @@ public class TreeviewNode implements Tree {
      */
     private List<TreeviewNode> nodes;
 
-    @Override
-    public String getNodeId() {
-        return tags;
-    }
-
-    @Override
-    public String getNodeParentId() {
-        return parentId;
-    }
-
-    @Override
-    public void setChildrenNodes(List childrenNodes) {
-        this.nodes = childrenNodes;
-    }
 }

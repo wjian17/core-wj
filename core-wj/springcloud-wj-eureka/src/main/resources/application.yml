@@ -6,9 +6,10 @@ server:
 eureka:
   instance:
     hostname: localhost
+    instance-id: springcloudwjeureka
   # 关闭自我保护，及时剔除无用服务
   server:
-    enableSelfPreservation: false
+    enableSelfPreservation: true
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

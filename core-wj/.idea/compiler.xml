@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -10,6 +9,7 @@
         <module name="springcloud-wj-api" />
         <module name="springcloud-wj-business" />
         <module name="springcloud-wj-common" />
+        <module name="springcloud-wj-config" />
         <module name="springcloud-wj-database" />
         <module name="springcloud-wj-demo" />
         <module name="springcloud-wj-domain" />
@@ -31,8 +31,8 @@
         <module name="springcloud-wj-redis" />
         <module name="springcloud-wj-rest" />
         <module name="springcloud-wj-shiro" />
+        <module name="springcloud-wj-shiro-server" />
         <module name="springcloud-wj-shiroclient" />
-        <module name="springcloud-wj-shiroserver" />
         <module name="springcloud-wj-shirosso" />
         <module name="springcloud-wj-solr" />
         <module name="springcloud-wj-ssm" />
@@ -42,17 +42,15 @@
         <module name="springcloud-wj-zuul" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
+    <bytecodeTargetLevel>
       <module name="core-wj" target="1.8" />
       <module name="springcloud-wj-api" target="1.8" />
       <module name="springcloud-wj-business" target="1.8" />
       <module name="springcloud-wj-common" target="1.5" />
-      <module name="springcloud-wj-configClient" target="1.8" />
-      <module name="springcloud-wj-configServer" target="1.8" />
+      <module name="springcloud-wj-config" target="1.8" />
       <module name="springcloud-wj-database" target="1.5" />
       <module name="springcloud-wj-demo" target="1.8" />
       <module name="springcloud-wj-domain" target="1.8" />
-      <module name="springcloud-wj-dubbo-admin" target="1.5" />
       <module name="springcloud-wj-dubbo-api" target="1.7" />
       <module name="springcloud-wj-dubbo-consumer" target="1.8" />
       <module name="springcloud-wj-dubbo-provider" target="1.8" />
@@ -72,8 +70,8 @@
       <module name="springcloud-wj-redis" target="1.8" />
       <module name="springcloud-wj-rest" target="1.8" />
       <module name="springcloud-wj-shiro" target="1.8" />
+      <module name="springcloud-wj-shiro-server" target="1.8" />
       <module name="springcloud-wj-shiroclient" target="1.8" />
-      <module name="springcloud-wj-shiroserver" target="1.8" />
       <module name="springcloud-wj-shirosso" target="1.8" />
       <module name="springcloud-wj-solr" target="1.8" />
       <module name="springcloud-wj-ssm" target="1.8" />

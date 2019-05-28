@@ -1,7 +1,7 @@
 package knowledge.accumulation.springcloud.config;
 
 import knowledge.accumulation.springcloud.mapper.UserMapper;
-import knowledge.accumulation.springcloud.module.shiro.pojo.User;
+import knowledge.accumulation.springcloud.module.shiro.pojo.SysUser;
 import knowledge.accumulation.springcloud.utils.jwt.JWTUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,7 +42,7 @@ public class JWTRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String username = JWTUtil.getUsername(principals.toString());
-        User user = userMapper.getByAccount(username);
+        SysUser user = userMapper.getByAccount(username);
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.addRole(user.getRoleId());
         Set<String> permission = new HashSet<>(Arrays.asList(user.getRoleId().split(",")));
@@ -63,7 +63,7 @@ public class JWTRealm extends AuthorizingRealm {
             throw new AuthenticationException("token invalid");
         }
 
-        User userBean = userMapper.getByAccount(username);
+        SysUser userBean = userMapper.getByAccount(username);
         if (userBean == null) {
             throw new AuthenticationException("User didn't existed!");
         }

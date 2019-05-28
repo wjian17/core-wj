@@ -5,7 +5,6 @@ import cn.stylefeng.roses.core.util.ToolUtil;
 import knowledge.accumulation.springcloud.mapper.MenuMapper;
 import knowledge.accumulation.springcloud.mapper.RoleMapper;
 import knowledge.accumulation.springcloud.mapper.UserMapper;
-import knowledge.accumulation.springcloud.module.shiro.pojo.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
@@ -18,7 +17,6 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;

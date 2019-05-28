@@ -1,7 +1,6 @@
 package knowledge.accumulation.springcloud.mapper;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import knowledge.accumulation.springcloud.module.shiro.pojo.Dict;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
