@@ -87,7 +87,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     private void response401(ServletRequest req, ServletResponse resp) {
         try {
             HttpServletResponse httpServletResponse = (HttpServletResponse) resp;
-            httpServletResponse.sendRedirect("/401");
+            httpServletResponse.sendRedirect("/401");//HttpServletResponse.SC_UNAUTHORIZED
         } catch (IOException e) {
             LOGGER.error(e.getMessage());
         }

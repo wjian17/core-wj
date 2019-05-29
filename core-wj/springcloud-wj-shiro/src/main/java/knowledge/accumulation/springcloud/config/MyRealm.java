@@ -1,10 +1,10 @@
 package knowledge.accumulation.springcloud.config;
 
-import cn.hutool.core.convert.Convert;
-import cn.stylefeng.roses.core.util.ToolUtil;
+import com.github.pagehelper.util.StringUtil;
 import knowledge.accumulation.springcloud.mapper.MenuMapper;
 import knowledge.accumulation.springcloud.mapper.RoleMapper;
 import knowledge.accumulation.springcloud.mapper.UserMapper;
+import knowledge.accumulation.springcloud.module.shiro.pojo.SysUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
@@ -17,9 +17,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MyRealm extends AuthorizingRealm {
 
@@ -45,21 +43,22 @@ public class MyRealm extends AuthorizingRealm {
         Set<String> permissionSet = new HashSet<>();
         Set<String> roleNameSet = new HashSet<>();
         try {
-            User user = userMapper.getByAccount(username);
+            SysUser user = userMapper.getByAccount(username);
             //用户角色数组
-            Long[] roleArray = Convert.toLongArray(user.getRoleId());
+//            Long[] roleArray = null;
+            long[] roleArray = Arrays.stream(user.getRoleId().split(",")).mapToLong(Long::valueOf).toArray();
             //获取用户角色列表
             for (Long roleId : roleArray) {
                 List<String> permissions = menuMapper.getResUrlsByRoleId(roleId);
                 if (permissions != null) {
                     for (String permission : permissions) {
-                        if (ToolUtil.isNotEmpty(permission)) {
+                        if (StringUtil.isNotEmpty(permission)) {
                             permissionSet.add(permission);
                         }
                     }
                 }
                 String roleName = roleMapper.selectNameById(roleId);
-                if (ToolUtil.isNotEmpty(roleName)) {
+                if (StringUtil.isNotEmpty(roleName)) {
                     roleNameSet.add(roleName);
                 }
             }
@@ -82,7 +81,7 @@ public class MyRealm extends AuthorizingRealm {
         }
         SimpleAuthenticationInfo simpleAuthenticationInfo = null;
         try {
-            User user = userMapper.getByAccount(usename.toString());
+            SysUser user = userMapper.getByAccount(usename.toString());
             Md5Hash md5Hash = new Md5Hash(authenticationToken.getCredentials(),ByteSource.Util.bytes(user.getSalt()),2);
             simpleAuthenticationInfo = new SimpleAuthenticationInfo(user.getAccount(), user.getPassword().toCharArray(), ByteSource.Util.bytes(user.getSalt()), getName());
         } catch (Exception e) {
