@@ -1,0 +1,45 @@
+## Dubbo 应用配置
+
+# dubbo服务端应用名称
+spring.dubbo.application.name=springboot-dubbo-server
+
+# dubbo协议
+spring.dubbo.protocol.name=dubbo
+
+# duboo端口号
+spring.dubbo.protocol.port=20880
+
+# 这是要发布到dubbo的接口实现位置
+spring.dubbo.scan=knowledge.accumulation.springcloud.hystrix.impl
+
+## Dubbo 注册中心配置
+
+# 注册中心地址
+spring.dubbo.registry.address=zookeeper://47.95.224.207:2180
+
+# 服务端口号
+server.port=8088
+
+## mysql数据库配置
+
+# Driver
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+#url
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/wjian?useUnicode=true&characterEncoding=UTF-8
+
+spring.datasource.username=root
+
+spring.datasource.password=root123
+
+spring.datasource.max-active=10
+
+spring.datasource.max-idle=5
+
+spring.datasource.min-idle=0
+
+## mybatis configuration
+
+
+mybatis.mapper-locations=classpath:mapper/*.xml
+

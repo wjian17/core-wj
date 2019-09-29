@@ -1,0 +1,100 @@
+# 服务端口号
+server:
+  port: 8760
+
+# 参考链接 https://blog.csdn.net/chengkui1990/article/details/80908405
+# 相关配置
+eureka:
+  instance:
+    hostname: localhost
+  # 关闭自我保护，及时剔除无用服务
+  server:
+    enableSelfPreservation: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    # 是否从其他的服务中心同步服务列表
+    fetch-registry: true
+    # 是否把自己作为服务注册到其他服务注册中心
+    register-with-eureka: false
+
+
+#数据库配置
+spring:
+  aop:
+    proxy-target-class: true
+    auto: true
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    dbType: mysql
+    #    dbType: oracle
+    #    dbType: db2
+    maxLifetime: 1765000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上
+    maximumPoolSize: 15
+    #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+    idleTimeout: 600000
+    #connectionTimeout: 30000 #等待来自池的连接的最大毫秒数。如果在没有可用连接的情况下超过此时间，则会抛出SQLException。最低可接受的连接超时时间为250 ms。 默认值：30000（30秒）
+    #允许连接在池中闲置的最长时间。 此设置仅适用于minimumIdle定义为小于maximumPoolSize。一旦池达到连接，空闲连接将不会退出minimumIdle。连接是否因闲置而退出，最大变化量为+30秒
+    #平均变化量为+15秒。在超时之前，连接永远不会退出。值为0意味着空闲连接永远不会从池中删除。允许的最小值是10000ms（10秒）。 默认值：600000（10分钟）
+    #自动提交行为。它是一个布尔值。 默认值：true
+    #autoCommit: true
+    mysql:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://47.95.224.207:3306/manager?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: Root_1234
+    oracle:
+      driverClassName: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@192.168.1.113:1521:biom
+      username: oracle
+      password: oracle
+      validationQuery: select 1 from dual
+    db2:
+      driverClassName: com.ibm.db2.jcc.DB2Driver
+      url: jdbc:db2://192.168.1.117:50000/attend:currentSchema=BIODEV;
+      username: db2inst
+      password: db2inst
+      validationQuery: select 1 from sysibm.sysdummy1
+    log:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://47.95.224.207:3306/manager?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+      username: root
+      password: Root_1234
+
+demo:
+  data:
+    init:
+      apiSecret: apiSecret
+      apiKey: apiKey
+
+mapping:
+  logbaseXml: classpath*:mapper/log/**.xml
+  baseXml: classpath*:mapper/${spring.datasource.dbType}/**.xml
+  basePackage: knowledge.accumulation.springcloud
+  logBasePackage: knowledge.accumulation.springcloud
+  config: mybatis-config.xml
+
+# mybatis配置
+mybatis:
+  # 批量插入或更新时，每次事务执行的插入或更新数据行数
+  #  writeMapperLocations: classpath:mapper/write/**.mapper.mapper.mapper
+  #  readMapperLocations: classpath:mapper/read/**.mapper.mapper.mapper
+  rows_per_transaction: 500
+
+# Log 配置 级别大写 TRACE|DEBUG|INFO|WARN|ERROR
+logging:
+  level:
+    #root: INFO
+    com.grgbanking.biometrics: DEBUG
+  path: springcloud-wj-database
+  config: classpath:logback.xml
+
+
+#cas配置
+cas:
+  client-name: mfgClient
+  server:
+    url: http://localhost:8091
+  project:
+    url: http://localhost:9003

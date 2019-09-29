@@ -1,0 +1,32 @@
+# 服务端口号
+server:
+  port: 8760
+
+#数据库配置
+spring:
+  application:
+    name: springcloud-wj-zuul
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+  aop:
+    proxy-target-class: true
+    auto: true
+  main:
+    allow-bean-definition-overriding: true
+
+# Log 配置 级别大写 TRACE|DEBUG|INFO|WARN|ERROR
+logging:
+  level:
+    #root: INFO
+    com.grgbanking.biometrics: DEBUG
+  path: springcloud-wj-database
+  config: classpath:logback.xml
+
+zuul:
+  routes:
+    api-menber1:
+      path: /test
+      serviceId: springcloud-wj-rest
+#    api-menber2:
+#      path: /test1
+#      serviceId: springcloud-wj-configServer

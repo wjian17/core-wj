@@ -1,0 +1,21 @@
+server:
+  port: 8099
+
+spring:
+#  cache:
+#    type: ehcache
+#    ehcache:
+#      config: ehcache.xml
+  cache:
+    type: redis
+    redis:
+      database: 1
+      host: 47.95.224.207
+      port: 6379
+      password: jhtech
+  application:
+    name: springcloud-wj-ehcache
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+  info:
+    component: springcloud-wj-ehcache

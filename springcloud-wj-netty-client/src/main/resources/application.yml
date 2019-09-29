@@ -1,0 +1,36 @@
+# 服务端口号
+server:
+  port: 8756
+
+# 参考链接 https://blog.csdn.net/chengkui1990/article/details/80908405
+# 相关配置
+eureka:
+  instance:
+    hostname: localhost
+  # 关闭自我保护，及时剔除无用服务
+  server:
+    enableSelfPreservation: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    # 是否从其他的服务中心同步服务列表
+    fetch-registry: true
+    # 是否把自己作为服务注册到其他服务注册中心
+    register-with-eureka: false
+
+boss:
+  thread:
+    count: 200
+so:
+  backlog: 100
+  keepalive: true
+tcp:
+  port: 8081
+worker:
+  thread:
+    count: 200
+netty:
+  port: 11111
+  basePackage: knowledge.accumulation.springcloud.service
+  clientName: nettyClient
+  url: 127.0.0.1

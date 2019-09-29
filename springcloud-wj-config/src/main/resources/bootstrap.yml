@@ -1,0 +1,20 @@
+info:
+  component: springcloud-wj-config
+
+
+# 参考链接 https://blog.csdn.net/chengkui1990/article/details/80908405
+# 相关配置
+eureka:
+  instance:
+    hostname: localhost
+  # 关闭自我保护，及时剔除无用服务
+  server:
+    enableSelfPreservation: true
+  client:
+    service-url:
+      #defaultZone: http://admin:admin@${eureka.instance.hostname}:8750/eureka/
+      defaultZone: http://admin:admin@${eureka.instance.hostname}:8750/eureka/
+    # 是否从其他的服务中心同步服务列表
+    fetch-registry: true
+    # 是否把自己作为服务注册到其他服务注册中心
+    register-with-eureka: true

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="knowledge.accumulation.springcloud.mybatis_generator.InsuranceRiskTypeFosunJointChildMapper" >
+  <resultMap id="BaseResultMap" type="knowledge.accumulation.springcloud.mybatis_generator.InsuranceRiskTypeFosunJointChild" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="contract_id" property="contractId" jdbcType="INTEGER" />
+    <result column="additional_plan_no" property="additionalPlanNo" jdbcType="VARCHAR" />
+    <result column="pay_years" property="payYears" jdbcType="INTEGER" />
+    <result column="insure_years" property="insureYears" jdbcType="INTEGER" />
+    <result column="insure_years_intv" property="insureYearsIntv" jdbcType="VARCHAR" />
+    <result column="start_date" property="startDate" jdbcType="TIMESTAMP" />
+    <result column="amount" property="amount" jdbcType="DECIMAL" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="height" property="height" jdbcType="DECIMAL" />
+    <result column="weight" property="weight" jdbcType="DECIMAL" />
+    <result column="bank_code" property="bankCode" jdbcType="VARCHAR" />
+    <result column="bank_account_name" property="bankAccountName" jdbcType="VARCHAR" />
+    <result column="bank_account_no" property="bankAccountNo" jdbcType="VARCHAR" />
+    <result column="bank_account_phone" property="bankAccountPhone" jdbcType="VARCHAR" />
+    <result column="app_val_start_date" property="appValStartDate" jdbcType="TIMESTAMP" />
+    <result column="app_val_end_date" property="appValEndDate" jdbcType="TIMESTAMP" />
+    <result column="ins_val_start_date" property="insValStartDate" jdbcType="TIMESTAMP" />
+    <result column="ins_val_end_date" property="insValEndDate" jdbcType="TIMESTAMP" />
+    <result column="serial_no" property="serialNo" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, contract_id, additional_plan_no, pay_years, insure_years, insure_years_intv, 
+    start_date, amount, province, city, country, height, weight, bank_code, bank_account_name, 
+    bank_account_no, bank_account_phone, app_val_start_date, app_val_end_date, ins_val_start_date, 
+    ins_val_end_date, serial_no, create_time, end_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from insurance_risk_type_fosun_joint_child
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from insurance_risk_type_fosun_joint_child
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="knowledge.accumulation.springcloud.mybatis_generator.InsuranceRiskTypeFosunJointChild" >
+    insert into insurance_risk_type_fosun_joint_child (id, contract_id, additional_plan_no, 
+      pay_years, insure_years, insure_years_intv, 
+      start_date, amount, province, 
+      city, country, height, 
+      weight, bank_code, bank_account_name, 
+      bank_account_no, bank_account_phone, app_val_start_date, 
+      app_val_end_date, ins_val_start_date, ins_val_end_date, 
+      serial_no, create_time, end_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{contractId,jdbcType=INTEGER}, #{additionalPlanNo,jdbcType=VARCHAR}, 
+      #{payYears,jdbcType=INTEGER}, #{insureYears,jdbcType=INTEGER}, #{insureYearsIntv,jdbcType=VARCHAR}, 
+      #{startDate,jdbcType=TIMESTAMP}, #{amount,jdbcType=DECIMAL}, #{province,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{height,jdbcType=DECIMAL}, 
+      #{weight,jdbcType=DECIMAL}, #{bankCode,jdbcType=VARCHAR}, #{bankAccountName,jdbcType=VARCHAR}, 
+      #{bankAccountNo,jdbcType=VARCHAR}, #{bankAccountPhone,jdbcType=VARCHAR}, #{appValStartDate,jdbcType=TIMESTAMP}, 
+      #{appValEndDate,jdbcType=TIMESTAMP}, #{insValStartDate,jdbcType=TIMESTAMP}, #{insValEndDate,jdbcType=TIMESTAMP}, 
+      #{serialNo,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="knowledge.accumulation.springcloud.mybatis_generator.InsuranceRiskTypeFosunJointChild" >
+    insert into insurance_risk_type_fosun_joint_child
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="contractId != null" >
+        contract_id,
+      </if>
+      <if test="additionalPlanNo != null" >
+        additional_plan_no,
+      </if>
+      <if test="payYears != null" >
+        pay_years,
+      </if>
+      <if test="insureYears != null" >
+        insure_years,
+      </if>
+      <if test="insureYearsIntv != null" >
+        insure_years_intv,
+      </if>
+      <if test="startDate != null" >
+        start_date,
+      </if>
+      <if test="amount != null" >
+        amount,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="height != null" >
+        height,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="bankCode != null" >
+        bank_code,
+      </if>
+      <if test="bankAccountName != null" >
+        bank_account_name,
+      </if>
+      <if test="bankAccountNo != null" >
+        bank_account_no,
+      </if>
+      <if test="bankAccountPhone != null" >
+        bank_account_phone,
+      </if>
+      <if test="appValStartDate != null" >
+        app_val_start_date,
+      </if>
+      <if test="appValEndDate != null" >
+        app_val_end_date,
+      </if>
+      <if test="insValStartDate != null" >
+        ins_val_start_date,
+      </if>
+      <if test="insValEndDate != null" >
+        ins_val_end_date,
+      </if>
+      <if test="serialNo != null" >
+        serial_no,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contractId != null" >
+        #{contractId,jdbcType=INTEGER},
+      </if>
+      <if test="additionalPlanNo != null" >
+        #{additionalPlanNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payYears != null" >
+        #{payYears,jdbcType=INTEGER},
+      </if>
+      <if test="insureYears != null" >
+        #{insureYears,jdbcType=INTEGER},
+      </if>
+      <if test="insureYearsIntv != null" >
+        #{insureYearsIntv,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=DECIMAL},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="bankCode != null" >
+        #{bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountName != null" >
+        #{bankAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountNo != null" >
+        #{bankAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountPhone != null" >
+        #{bankAccountPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="appValStartDate != null" >
+        #{appValStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appValEndDate != null" >
+        #{appValEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insValStartDate != null" >
+        #{insValStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insValEndDate != null" >
+        #{insValEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serialNo != null" >
+        #{serialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="knowledge.accumulation.springcloud.mybatis_generator.InsuranceRiskTypeFosunJointChild" >
+    update insurance_risk_type_fosun_joint_child
+    <set >
+      <if test="contractId != null" >
+        contract_id = #{contractId,jdbcType=INTEGER},
+      </if>
+      <if test="additionalPlanNo != null" >
+        additional_plan_no = #{additionalPlanNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payYears != null" >
+        pay_years = #{payYears,jdbcType=INTEGER},
+      </if>
+      <if test="insureYears != null" >
+        insure_years = #{insureYears,jdbcType=INTEGER},
+      </if>
+      <if test="insureYearsIntv != null" >
+        insure_years_intv = #{insureYearsIntv,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        start_date = #{startDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        height = #{height,jdbcType=DECIMAL},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=DECIMAL},
+      </if>
+      <if test="bankCode != null" >
+        bank_code = #{bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountName != null" >
+        bank_account_name = #{bankAccountName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountNo != null" >
+        bank_account_no = #{bankAccountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountPhone != null" >
+        bank_account_phone = #{bankAccountPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="appValStartDate != null" >
+        app_val_start_date = #{appValStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appValEndDate != null" >
+        app_val_end_date = #{appValEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insValStartDate != null" >
+        ins_val_start_date = #{insValStartDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="insValEndDate != null" >
+        ins_val_end_date = #{insValEndDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serialNo != null" >
+        serial_no = #{serialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="knowledge.accumulation.springcloud.mybatis_generator.InsuranceRiskTypeFosunJointChild" >
+    update insurance_risk_type_fosun_joint_child
+    set contract_id = #{contractId,jdbcType=INTEGER},
+      additional_plan_no = #{additionalPlanNo,jdbcType=VARCHAR},
+      pay_years = #{payYears,jdbcType=INTEGER},
+      insure_years = #{insureYears,jdbcType=INTEGER},
+      insure_years_intv = #{insureYearsIntv,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=TIMESTAMP},
+      amount = #{amount,jdbcType=DECIMAL},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      height = #{height,jdbcType=DECIMAL},
+      weight = #{weight,jdbcType=DECIMAL},
+      bank_code = #{bankCode,jdbcType=VARCHAR},
+      bank_account_name = #{bankAccountName,jdbcType=VARCHAR},
+      bank_account_no = #{bankAccountNo,jdbcType=VARCHAR},
+      bank_account_phone = #{bankAccountPhone,jdbcType=VARCHAR},
+      app_val_start_date = #{appValStartDate,jdbcType=TIMESTAMP},
+      app_val_end_date = #{appValEndDate,jdbcType=TIMESTAMP},
+      ins_val_start_date = #{insValStartDate,jdbcType=TIMESTAMP},
+      ins_val_end_date = #{insValEndDate,jdbcType=TIMESTAMP},
+      serial_no = #{serialNo,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

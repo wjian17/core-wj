@@ -1,0 +1,72 @@
+# 服务端口号
+server:
+  port: 8754
+
+# 参考链接 https://blog.csdn.net/chengkui1990/article/details/80908405
+# 参考链接 https://www.jianshu.com/p/ee792eb0365b?utm_campaign
+
+# 相关配置
+eureka:
+  instance:
+    hostname: localhost
+  # 关闭自我保护，及时剔除无用服务
+  server:
+    enableSelfPreservation: true
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8750/eureka/
+    # 是否从其他的服务中心同步服务列表
+    fetch-registry: true
+    # 是否把自己作为服务注册到其他服务注册中心
+    register-with-eureka: false
+
+spring:
+  application:
+    name: springcloud-wj-mq
+  rabbitmq:
+    host: 47.95.224.207
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    #    支持发布确认
+    publisher-confirms: true
+    #    支持发布返回
+    publisher-returns: true
+    listener:
+      simple:
+        #采用手动应答
+        acknowledge-mode: manual
+        # 当前监听容器数
+        concurrency: 1
+        # 最大数
+        max-concurrency: 1
+        # 是否支持重试 - 需配置在消费端，重试是在消费端-条件：抛出异常
+        retry:
+          enabled: true
+          maxAttempts: 5
+          initialInterval: 5000ms
+#  activemq:
+#    broker-url: tcp://localhost:61616
+#    in-memory: true
+#    password: admin
+#    user: admin
+#    pool:
+#      enabled: false
+#如果为True，则是Topic；如果是false或者默认，则是queue
+  jms:
+    pub-sub-domain: false
+#  kafka:
+#    bootstrap-servers: 47.95.224.207:9092
+#    consumer:
+#      group-id: 0
+#      #key-value序列化反序列化
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    producer:
+#      #每次批量发送消息的数量
+#      batch-size: 65536
+#      buffer-memory: 524288
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#
